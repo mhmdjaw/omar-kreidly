@@ -1,6 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import GlobalStyle from "./layout-styles";
+import LoadingScreen from "../LoadingScreen";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -20,7 +21,10 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
   return (
     <>
       <GlobalStyle />
-      <main>{children}</main>
+      <main>
+        <LoadingScreen />
+        {children}
+      </main>
     </>
   );
 };

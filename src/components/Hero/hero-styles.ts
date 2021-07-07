@@ -25,6 +25,7 @@ const introImgGrayscale = keyframes`
 export const HeroContainer = styled.div`
   height: calc(var(--vh, 1vh) * 100);
   overflow-y: hidden;
+  position: relative;
   .hero-img {
     animation: 1.5s ease-in-out 0s 1 ${introImgOpacity},
       3s ease-in-out 1.5s 1 ${introImgGrayscale};
