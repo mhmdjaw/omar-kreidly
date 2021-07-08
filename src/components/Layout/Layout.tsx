@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import GlobalStyle from "./layout-styles";
 import LoadingScreen from "../LoadingScreen";
@@ -8,6 +8,8 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
+  const [animationComplete, setAnimationComplete] = useState(false);
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -22,8 +24,11 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
     <>
       <GlobalStyle />
       <main>
-        <LoadingScreen />
-        {children}
+        {animationComplete ? (
+          children
+        ) : (
+          <LoadingScreen setAnimationComplete={setAnimationComplete} />
+        )}
       </main>
     </>
   );

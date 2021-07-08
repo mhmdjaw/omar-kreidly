@@ -1,5 +1,7 @@
+import { ease } from "../../helpers";
+
 const transition = {
-  ease: [0.95, 0.03, 0.12, 0.97],
+  ease: ease.expoInOut,
   duration: 1.6,
 };
 

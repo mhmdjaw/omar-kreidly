@@ -9,10 +9,10 @@ const theme = {
     md: 960,
     lg: 1280,
     up(breakpoint: Breakpoint): string {
-      return `@media (max-width: ${this[breakpoint]}px)`;
+      return `@media (min-width: ${this[breakpoint]}px)`;
     },
     down(breakpoint: Breakpoint): string {
-      return `@media (min-width: ${this[breakpoint]}px)`;
+      return `@media (max-width: ${this[breakpoint]}px)`;
     },
   },
   // left: `${hamburgerPosition.x}px`,

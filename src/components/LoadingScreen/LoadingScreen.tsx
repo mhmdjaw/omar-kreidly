@@ -1,44 +1,29 @@
-import { useAnimation } from "framer-motion";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { SecondaryLogo } from "../../assets/svg";
 import {
   Overlay,
   LoadingContainer,
   SvgContainer,
 } from "./loading-screen-styles";
-import loadingScreenVariants from "./loading-screen-variants";
+import useLoadingScreen from "./LoadingScreen.State";
 
-const LoadingScreen: React.FC = () => {
-  const [animationComplete, setAnimationComplete] = useState(false);
+interface LoadingScreenProps {
+  setAnimationComplete: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-  const { svgVariants, overlayVertical, overlayHorizontal } =
-    loadingScreenVariants;
-  const overlay1Controls = useAnimation();
-  const overlay2Controls = useAnimation();
-  const overlay3Controls = useAnimation();
+const LoadingScreen: React.FC<LoadingScreenProps> = ({
+  setAnimationComplete,
+}: LoadingScreenProps) => {
+  const {
+    svgVariants,
+    overlayVertical,
+    overlayHorizontal,
+    overlay1Controls,
+    overlay2Controls,
+    overlay3Controls,
+  } = useLoadingScreen(setAnimationComplete);
 
-  const sequence = async () => {
-    await new Promise<void>((resolve) => {
-      setTimeout(async () => {
-        await overlay1Controls.start("visible");
-        resolve();
-      }, 1500);
-    });
-
-    await overlay2Controls.start("visible");
-    await overlay3Controls.start("visible");
-    setAnimationComplete(true);
-  };
-
-  useEffect(
-    () => {
-      sequence();
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
-  );
-
-  return !animationComplete ? (
+  return (
     <LoadingContainer>
       <Overlay
         variants={overlayVertical}
@@ -64,7 +49,7 @@ const LoadingScreen: React.FC = () => {
         animate={overlay3Controls}
       />
     </LoadingContainer>
-  ) : null;
+  );
 };
 
 export default LoadingScreen;
