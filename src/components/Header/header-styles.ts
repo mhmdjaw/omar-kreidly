@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "gatsby";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import theme from "../../theme";
 
 export const HeaderNav = styled(motion.div)`
@@ -22,9 +22,17 @@ export const Logo = styled(Link)`
   ${theme.breakpoints.down("sm")} {
     width: 85px;
   }
+  transition: all 0.3s;
+  &:hover {
+    opacity: 0;
+  }
 `;
 
-export const NavItem = styled(Link)`
+interface NavItemProps {
+  isActive: boolean;
+}
+
+export const NavItem = styled(Link)<NavItemProps>`
   font-size: 1.2rem;
   font-weight: 500;
   padding: 5px 0;
@@ -45,6 +53,14 @@ export const NavItem = styled(Link)`
       width: 100%;
     }
   }
+
+  ${({ isActive }) =>
+    isActive &&
+    css`
+      &::before {
+        width: 100%;
+      }
+    `}
 
   ${theme.breakpoints.down("sm")} {
     font-size: 0.9rem;

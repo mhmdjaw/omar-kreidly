@@ -71,7 +71,7 @@ export const Title = styled(motion.h1)`
     font-size: 3rem;
   }
   ${theme.breakpoints.down("sm")} {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
   & span {
     display: block;

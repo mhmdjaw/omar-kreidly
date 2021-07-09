@@ -15,8 +15,6 @@ const theme = {
       return `@media (max-width: ${this[breakpoint]}px)`;
     },
   },
-  // left: `${hamburgerPosition.x}px`,
-  // top: `${hamburgerPosition.y}px`,
 };
 
 export default theme;

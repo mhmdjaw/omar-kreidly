@@ -16,8 +16,8 @@ export const Cursor = styled.div<CursorProps>`
   transition: all 0.1s ease-out, transform 0.4s ease-out;
   pointer-events: none;
   z-index: 999;
-  ${(props) =>
-    props.hovered &&
+  ${({ hovered }) =>
+    hovered &&
     css`
       transform: translate(-50%, -50%) rotateY(180deg);
     `}

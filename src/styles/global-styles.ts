@@ -22,8 +22,8 @@ export const Container = styled.div<ContainerProps>`
     max-width: 1244px;
   }
 
-  ${(props) =>
-    props.fluid &&
+  ${({ fluid }) =>
+    fluid &&
     css`
       /* padding: 0; */
       margin: 0;
@@ -44,32 +44,32 @@ export const Flex = styled.div<FlexProps>`
   display: flex;
   align-items: center;
 
-  ${(props) =>
-    props.spaceBetween &&
+  ${({ spaceBetween }) =>
+    spaceBetween &&
     css`
       justify-content: space-between;
     `}
 
-  ${(props) =>
-    props.flexEnd &&
+  ${({ flexEnd }) =>
+    flexEnd &&
     css`
       justify-content: flex-end;
     `}
 
-  ${(props) =>
-    props.alignTop &&
+  ${({ alignTop }) =>
+    alignTop &&
     css`
       align-items: flex-start;
     `}
 
-  ${(props) =>
-    props.column &&
+  ${({ column }) =>
+    column &&
     css`
       flex-direction: column;
     `}
 
-  ${(props) =>
-    props.noHeight &&
+  ${({ noHeight }) =>
+    noHeight &&
     css`
       height: 0;
     `}

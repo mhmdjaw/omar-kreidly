@@ -11,6 +11,7 @@ import { useGlobalContext } from "../../context";
 interface HeaderProps {
   onAnimationComplete?: () => void;
   delayAnimation?: boolean;
+  pathname: string;
 }
 
 const navItems = [
@@ -27,6 +28,7 @@ const navItems = [
 const Header: React.FC<HeaderProps> = ({
   onAnimationComplete,
   delayAnimation,
+  pathname,
 }: HeaderProps) => {
   const { headerControls } = useHeader(delayAnimation, onAnimationComplete);
   const isMobile = useMediaQuery({ maxWidth: theme.breakpoints.sm });
@@ -54,6 +56,7 @@ const Header: React.FC<HeaderProps> = ({
                 to={link}
                 onMouseEnter={() => onCursor("hovered")}
                 onMouseLeave={() => onCursor("unhovered")}
+                isActive={pathname === link}
               >
                 {text}
               </NavItem>

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { SecondaryLogo } from "../../assets/svg";
 import { useGlobalContext } from "../../context";
+import { isBrowser } from "../../helpers";
 import { Cursor } from "./custom-cursor-styles";
 
 const CustomCursor: React.FC = () => {
@@ -17,7 +18,9 @@ const CustomCursor: React.FC = () => {
       cursor.style.top = `${clientY}px`;
     };
 
-    document.addEventListener("mousemove", onMouseMove);
+    if (isBrowser) {
+      document.addEventListener("mousemove", onMouseMove);
+    }
 
     const onFirstTouch = () => {
       const cursor = cursorRef.current as HTMLDivElement;
@@ -26,13 +29,15 @@ const CustomCursor: React.FC = () => {
       document.removeEventListener("mousemove", onMouseMove);
     };
 
-    if (typeof window !== "undefined") {
+    if (isBrowser) {
       window.addEventListener("touchstart", onFirstTouch, false);
     }
 
     return () => {
-      document.removeEventListener("mousemove", onMouseMove);
-      window.removeEventListener("touchstart", onFirstTouch, false);
+      if (isBrowser) {
+        document.removeEventListener("mousemove", onMouseMove);
+        window.removeEventListener("touchstart", onFirstTouch, false);
+      }
     };
   }, []);
 

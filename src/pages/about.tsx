@@ -1,13 +1,14 @@
 import React from "react";
 import { Header, SEO } from "../components";
+import { PageProps } from "gatsby";
 
-const about: React.FC = () => {
+const About: React.FC<PageProps> = ({ location }: PageProps) => {
   return (
     <>
       <SEO title="About" />
-      <Header />
+      <Header pathname={location.pathname} />
     </>
   );
 };
 
-export default about;
+export default About;
