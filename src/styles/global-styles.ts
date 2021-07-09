@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import theme from "../theme";
 
 interface ContainerProps {
   fluid?: boolean;
@@ -11,13 +12,13 @@ export const Container = styled.div<ContainerProps>`
   position: relative;
   width: auto;
   height: 100%;
-  ${(props) => props.theme.breakpoints.up("sm")} {
+  ${theme.breakpoints.up("sm")} {
     padding: 0 65px;
   }
-  ${(props) => props.theme.breakpoints.up("md")} {
+  ${theme.breakpoints.up("md")} {
     max-width: 960px;
   }
-  ${(props) => props.theme.breakpoints.up("lg")} {
+  ${theme.breakpoints.up("lg")} {
     max-width: 1244px;
   }
 
@@ -34,6 +35,7 @@ interface FlexProps {
   spaceBetween?: boolean;
   alignTop?: boolean;
   flexEnd?: boolean;
+  column?: boolean;
   noHeight?: boolean;
 }
 
@@ -58,6 +60,12 @@ export const Flex = styled.div<FlexProps>`
     props.alignTop &&
     css`
       align-items: flex-start;
+    `}
+
+  ${(props) =>
+    props.column &&
+    css`
+      flex-direction: column;
     `}
 
   ${(props) =>

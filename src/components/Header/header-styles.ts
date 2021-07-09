@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "gatsby";
 import styled from "styled-components";
+import theme from "../../theme";
 
 export const HeaderNav = styled(motion.div)`
   height: 0;
@@ -10,7 +11,7 @@ export const HeaderNav = styled(motion.div)`
   right: 0;
   left: 0;
   z-index: 99;
-  ${(props) => props.theme.breakpoints.up("sm")} {
+  ${theme.breakpoints.up("sm")} {
     top: 72px;
   }
 `;
@@ -18,7 +19,7 @@ export const HeaderNav = styled(motion.div)`
 export const Logo = styled(Link)`
   fill: ${(props) => props.theme.text};
   width: 150px;
-  ${(props) => props.theme.breakpoints.down("sm")} {
+  ${theme.breakpoints.down("sm")} {
     width: 85px;
   }
 `;
@@ -26,7 +27,6 @@ export const Logo = styled(Link)`
 export const NavItem = styled(Link)`
   font-size: 1.2rem;
   font-weight: 500;
-  margin-left: 60px;
   padding: 5px 0;
   position: relative;
   &::before {
@@ -46,8 +46,12 @@ export const NavItem = styled(Link)`
     }
   }
 
-  ${(props) => props.theme.breakpoints.down("sm")} {
+  ${theme.breakpoints.down("sm")} {
     margin-left: 20px;
     font-size: 0.9rem;
+  }
+
+  &:last-child {
+    margin-left: 60px;
   }
 `;

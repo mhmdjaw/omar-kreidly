@@ -27,12 +27,12 @@ const Header: React.FC<HeaderProps> = ({
     >
       <Container fluid>
         <Flex spaceBetween noHeight>
-          <Logo to="#">
+          <Logo to="/">
             <PrimaryLogo />
           </Logo>
           <Flex>
-            <NavItem to="#">About</NavItem>
-            <NavItem to="#">Contact</NavItem>
+            <NavItem to="/about">About</NavItem>
+            <NavItem to="/contact">Contact</NavItem>
           </Flex>
         </Flex>
       </Container>

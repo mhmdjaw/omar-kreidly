@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Header, Hero, SEO } from "../components";
 
 const Home: React.FC = () => {
+  const [headerAnimationComplete, setHeaderAnimationComplete] = useState(false);
   return (
     <>
       <SEO title="Photographer" />
       <Header
         delayAnimation
-        onAnimationComplete={() => console.log("success")}
+        onAnimationComplete={() => setHeaderAnimationComplete(true)}
       />
-      <Hero />
+      <Hero headerAnimationComplete={headerAnimationComplete} />
     </>
   );
 };
