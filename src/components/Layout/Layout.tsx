@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import GlobalStyle from "./layout-styles";
 import LoadingScreen from "../LoadingScreen";
+import CustomCursor from "../CustomCursor";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -23,6 +24,7 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
   return (
     <>
       <GlobalStyle />
+      {animationComplete && <CustomCursor />}
       <main>
         {animationComplete ? (
           children

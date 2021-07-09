@@ -47,11 +47,13 @@ export const NavItem = styled(Link)`
   }
 
   ${theme.breakpoints.down("sm")} {
-    margin-left: 20px;
     font-size: 0.9rem;
   }
 
   &:last-child {
     margin-left: 60px;
+    ${theme.breakpoints.down("sm")} {
+      margin-left: 20px;
+    }
   }
 `;

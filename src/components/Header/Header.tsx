@@ -6,11 +6,23 @@ import useHeader from "./Header.State";
 import { useMediaQuery } from "react-responsive";
 import theme from "../../theme";
 import { ease } from "../../helpers";
+import { useGlobalContext } from "../../context";
 
 interface HeaderProps {
   onAnimationComplete?: () => void;
   delayAnimation?: boolean;
 }
+
+const navItems = [
+  {
+    text: "About",
+    link: "/about",
+  },
+  {
+    text: "Contact",
+    link: "/contact",
+  },
+];
 
 const Header: React.FC<HeaderProps> = ({
   onAnimationComplete,
@@ -18,6 +30,7 @@ const Header: React.FC<HeaderProps> = ({
 }: HeaderProps) => {
   const { headerControls } = useHeader(delayAnimation, onAnimationComplete);
   const isMobile = useMediaQuery({ maxWidth: theme.breakpoints.sm });
+  const { onCursor } = useGlobalContext();
 
   return (
     <HeaderNav
@@ -27,12 +40,24 @@ const Header: React.FC<HeaderProps> = ({
     >
       <Container fluid>
         <Flex spaceBetween noHeight>
-          <Logo to="/">
+          <Logo
+            to="/"
+            onMouseEnter={() => onCursor("hovered")}
+            onMouseLeave={() => onCursor("unhovered")}
+          >
             <PrimaryLogo />
           </Logo>
           <Flex>
-            <NavItem to="/about">About</NavItem>
-            <NavItem to="/contact">Contact</NavItem>
+            {navItems.map(({ link, text }, i) => (
+              <NavItem
+                key={i}
+                to={link}
+                onMouseEnter={() => onCursor("hovered")}
+                onMouseLeave={() => onCursor("unhovered")}
+              >
+                {text}
+              </NavItem>
+            ))}
           </Flex>
         </Flex>
       </Container>

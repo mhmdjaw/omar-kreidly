@@ -1,5 +1,5 @@
 import React, { createContext, useContext } from "react";
-import { State } from "./global-provider-types";
+import { GlobalContext, State } from "./global-provider-types";
 import useGlobalProvider from "./GlobalProvider.State";
 
 // Define the context
@@ -14,4 +14,5 @@ export const GlobalProvider: React.FC = ({ children }) => {
 };
 
 // Custom hooks to use dispatch and state
-export const useGlobalContext = (): State => useContext(globalContext) as State;
+export const useGlobalContext = (): GlobalContext =>
+  useContext(globalContext) as GlobalContext;
