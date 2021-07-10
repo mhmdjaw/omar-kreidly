@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Header, Hero, SEO } from "../components";
+import { Header, Hero, PageTransition, SEO } from "../components";
 import { PageProps } from "gatsby";
 
 const Home: React.FC<PageProps> = ({ location }: PageProps) => {
@@ -7,12 +7,17 @@ const Home: React.FC<PageProps> = ({ location }: PageProps) => {
   return (
     <>
       <SEO title="Photographer" />
-      <Header
-        delayAnimation
-        onAnimationComplete={() => setHeaderAnimationComplete(true)}
-        pathname={location.pathname}
-      />
-      <Hero headerAnimationComplete={headerAnimationComplete} />
+      <header>
+        <Header
+          delayAnimation
+          onAnimationComplete={() => setHeaderAnimationComplete(true)}
+          pathname={location.pathname}
+        />
+      </header>
+      <main>
+        <Hero headerAnimationComplete={headerAnimationComplete} />
+      </main>
+      <PageTransition />
     </>
   );
 };

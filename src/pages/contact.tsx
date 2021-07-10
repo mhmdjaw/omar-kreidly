@@ -2,10 +2,10 @@ import React from "react";
 import { Layout, SEO } from "../components";
 import { PageProps } from "gatsby";
 
-const About: React.FC<PageProps> = ({ location }: PageProps) => {
+const Contact: React.FC<PageProps> = ({ location }: PageProps) => {
   return (
     <>
-      <SEO title="About" />
+      <SEO title="Contact" />
       <Layout pathname={location.pathname}>
         <></>
       </Layout>
@@ -13,4 +13,4 @@ const About: React.FC<PageProps> = ({ location }: PageProps) => {
   );
 };
 
-export default About;
+export default Contact;

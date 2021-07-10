@@ -1,37 +1,18 @@
-import React, { useState } from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import GlobalStyle from "./layout-styles";
-import LoadingScreen from "../LoadingScreen";
-import CustomCursor from "../CustomCursor";
+import React from "react";
+import Header from "../Header";
+import PageTransition from "../PageTransition";
 
 interface LayoutProps {
   children: React.ReactNode;
+  pathname: string;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
-  const [animationComplete, setAnimationComplete] = useState(false);
-
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
+const Layout: React.FC<LayoutProps> = ({ children, pathname }: LayoutProps) => {
   return (
     <>
-      <GlobalStyle />
-      {animationComplete && <CustomCursor />}
-      <main>
-        {animationComplete ? (
-          children
-        ) : (
-          <LoadingScreen setAnimationComplete={setAnimationComplete} />
-        )}
-      </main>
+      <Header pathname={pathname} />
+      <main>{children}</main>
+      <PageTransition />
     </>
   );
 };

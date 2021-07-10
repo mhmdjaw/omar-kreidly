@@ -4,8 +4,11 @@ import { SEO } from "../components";
 const NotFoundPage: React.FC = () => (
   <>
     <SEO title="Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <h1>OOPS!</h1>
+    <p>
+      Looks like the page you&apos;re looking for doesn&apos;t exist... the
+      sadness 😭
+    </p>
   </>
 );
 
