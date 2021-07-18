@@ -3,15 +3,23 @@ import styled, { keyframes } from "styled-components";
 import { Flex } from "../../styles/global-styles";
 import theme from "../../theme";
 
+export const HeroContainer = styled.div`
+  height: calc(var(--vh, 1vh) * 100);
+  position: relative;
+  overflow: hidden;
+`;
+
 const introImgOpacity = keyframes`
   from {
     opacity: 0;
     filter: grayscale(1) brightness(1);
+    transform: scale(1.1);
   }
 
   to {
     opacity: 1;
     filter: grayscale(1) brightness(1);
+    transform: scale(1);
   }
 `;
 
@@ -23,16 +31,6 @@ const introImgGrayscale = keyframes`
   to {
     filter: grayscale(0) brightness(0.7);
   }
-`;
-
-export const HeroContainer = styled.div`
-  height: calc(var(--vh, 1vh) * 100);
-  position: relative;
-  /* overflow-y: hidden; */
-  /* .hero-img {
-    animation: 1.5s ease-in-out 0s 1 ${introImgOpacity},
-      3s ease-in-out 1.5s 1 ${introImgGrayscale};
-  } */
 `;
 
 export const HeroImage = styled.img`

@@ -14,7 +14,6 @@
 
 exports.ssrComponents = {
   "component---cache-dev-404-page-js": preferDefault(__webpack_require__(/*! ./.cache/dev-404-page.js */ "./.cache/dev-404-page.js")),
-  "component---src-pages-about-tsx": preferDefault(__webpack_require__(/*! ./src/pages/about.tsx */ "./src/pages/about.tsx")),
   "component---src-pages-index-tsx": preferDefault(__webpack_require__(/*! ./src/pages/index.tsx */ "./src/pages/index.tsx"))
   }
 
@@ -14662,11 +14661,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const introImgOpacity = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__.keyframes)(["from{opacity:0;filter:grayscale(1) brightness(1);}to{opacity:1;filter:grayscale(1) brightness(1);}"]);
-const introImgGrayscale = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__.keyframes)(["from{filter:grayscale(1) brightness(1);}to{filter:grayscale(0) brightness(0.7);}"]);
 const HeroContainer = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.div.withConfig({
   displayName: "hero-styles__HeroContainer"
-})(["height:calc(var(--vh,1vh) * 100);position:relative;"]);
+})(["height:calc(var(--vh,1vh) * 100);position:relative;overflow:hidden;"]);
+const introImgOpacity = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__.keyframes)(["from{opacity:0;filter:grayscale(1) brightness(1);transform:scale(1.1);}to{opacity:1;filter:grayscale(1) brightness(1);transform:scale(1);}"]);
+const introImgGrayscale = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__.keyframes)(["from{filter:grayscale(1) brightness(1);}to{filter:grayscale(0) brightness(0.7);}"]);
 const HeroImage = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.img.withConfig({
   displayName: "hero-styles__HeroImage"
 })(["position:relative;width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(0.7);animation:1.5s ease-in-out 0s 1 ", ",3s linear 1.5s 1 ", ";"], introImgOpacity, introImgGrayscale);
@@ -15542,37 +15541,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers */ "./src/helpers/helpers.ts");
 
-
-/***/ }),
-
-/***/ "./src/pages/about.tsx":
-/*!*****************************!*\
-  !*** ./src/pages/about.tsx ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components */ "./src/components/index.ts");
-
-
-
-const About = ({
-  location
-}) => {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components__WEBPACK_IMPORTED_MODULE_1__.SEO, {
-    title: "About"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components__WEBPACK_IMPORTED_MODULE_1__.Layout, {
-    pathname: location.pathname
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null)));
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (About);
 
 /***/ }),
 
