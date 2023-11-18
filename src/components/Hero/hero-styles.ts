@@ -1,13 +1,12 @@
-import { motion } from "framer-motion";
-import styled, { keyframes } from "styled-components";
-import { Flex } from "../../styles/global-styles";
-import theme from "../../theme";
+import styled, { keyframes } from 'styled-components'
+import { Flex } from '../../styles/global-styles'
+import theme from '../../theme'
 
 export const HeroContainer = styled.div`
   height: calc(var(--vh, 1vh) * 100);
   position: relative;
   overflow: hidden;
-`;
+`
 
 const introImgOpacity = keyframes`
   from {
@@ -21,7 +20,7 @@ const introImgOpacity = keyframes`
     filter: grayscale(1) brightness(1);
     transform: scale(1);
   }
-`;
+`
 
 const introImgGrayscale = keyframes`
   from {
@@ -31,7 +30,7 @@ const introImgGrayscale = keyframes`
   to {
     filter: grayscale(0) brightness(0.7);
   }
-`;
+`
 
 export const HeroImage = styled.img`
   position: relative;
@@ -40,9 +39,10 @@ export const HeroImage = styled.img`
   object-fit: cover;
   object-position: center top;
   filter: brightness(0.7);
-  animation: 1.5s ease-in-out 0s 1 ${introImgOpacity},
+  animation:
+    1.5s ease-in-out 0s 1 ${introImgOpacity},
     3s linear 1.5s 1 ${introImgGrayscale};
-`;
+`
 
 export const HeroContent = styled(Flex)`
   position: absolute;
@@ -53,28 +53,52 @@ export const HeroContent = styled(Flex)`
   & > div:first-child {
     flex-basis: 50%;
   }
-`;
+  & > div:last-child {
+    flex-basis: 50%;
+  }
+`
 
-export const Title = styled(motion.h1)`
-  font-size: 7.5rem;
-  font-weight: 600;
+export const Title = styled.h1`
+  font-size: 4rem;
+  /* font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.5rem; */
   margin: 0;
   overflow: hidden;
-  ${theme.breakpoints.down("lg")} {
-    font-size: 5.3rem;
+  ${theme.breakpoints.down('lg')} {
+    font-size: 3.1rem;
   }
-  ${theme.breakpoints.down("md")} {
-    font-size: 3rem;
+  ${theme.breakpoints.down('md')} {
+    font-size: 2.3rem;
   }
-  ${theme.breakpoints.down("sm")} {
+  ${theme.breakpoints.down('sm')} {
     font-size: 1.4rem;
   }
-  & span {
+  & > div {
     display: block;
+    & > span:first-child {
+      font-weight: 300;
+    }
+    & > div:last-child {
+      display: inline-block;
+      position: relative;
+      font-weight: 700;
+      & > span {
+        color: transparent;
+      }
+      & div {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: linear-gradient(to right, #fff 50%, #000 120%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        mix-blend-mode: difference;
+      }
+    }
   }
-`;
+`
 
 const scrollAnimation = keyframes`
   0% {
@@ -86,11 +110,11 @@ const scrollAnimation = keyframes`
   100% {
     opacity: 0;
   }
-`;
+`
 
 export const ScrollIndicator = styled.div`
   position: relative;
-  ${theme.breakpoints.down("md")} {
+  ${theme.breakpoints.down('md')} {
     transform: scale(0.6);
   }
   & span {
@@ -115,11 +139,11 @@ export const ScrollIndicator = styled.div`
       animation-delay: 0.3s;
     }
   }
-`;
+`
 
 export const ScrollIndicatorContainer = styled(Flex)`
   flex-basis: 50%;
-`;
+`
 
 // const scrollAnimation = keyframes`
 //   0% {

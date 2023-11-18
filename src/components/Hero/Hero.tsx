@@ -1,23 +1,17 @@
-import React from "react";
-import {
-  HeroContainer,
-  HeroContent,
-  HeroImage,
-  ScrollIndicator,
-  ScrollIndicatorContainer,
-  Title,
-} from "./hero-styles";
-import heroImage from "../../assets/images/omar-kreidly.jpg";
-import { ease } from "../../helpers";
-import useHero from "./Hero.State";
-import { motion } from "framer-motion";
+import React from 'react'
+import { HeroContainer, HeroContent, HeroImage, ScrollIndicator, ScrollIndicatorContainer, Title } from './hero-styles'
+import heroImage from '../../assets/images/omar-kreidly.jpg'
+import { ease } from '../../helpers'
+import useHero from './Hero.State'
+import { motion } from 'framer-motion'
+import ReactTextTransition from 'react-text-transition'
 
 interface HeroProps {
-  headerAnimationComplete: boolean;
+  headerAnimationComplete: boolean
 }
 
 const Hero: React.FC<HeroProps> = ({ headerAnimationComplete }: HeroProps) => {
-  const { showIndicator, titleControls } = useHero(headerAnimationComplete);
+  const { showIndicator, titleControls, headlines, index } = useHero(headerAnimationComplete)
 
   return (
     <HeroContainer>
@@ -34,15 +28,27 @@ const Hero: React.FC<HeroProps> = ({ headerAnimationComplete }: HeroProps) => {
       <HeroContent column>
         <div />
         <Title>
-          <motion.span
-            initial={{ y: "100%", opacity: 0 }}
+          <motion.div
+            initial={{ y: '100%', opacity: 0 }}
             transition={{ ease: ease.slideIn, duration: 1 }}
             animate={titleControls}
           >
-            omar kreidly
-          </motion.span>
+            <span>I&#8217;m a</span>{' '}
+            <div>
+              <span>UX/UI Designer</span>
+              <div>
+                <ReactTextTransition
+                  // springConfig={{ mass: 1.5, tension: 200, friction: 15 }}
+                  inline
+                >
+                  {headlines[index]}
+                </ReactTextTransition>
+              </div>
+            </div>
+          </motion.div>
         </Title>
-        <ScrollIndicatorContainer>
+        <div />
+        {/* <ScrollIndicatorContainer>
           {showIndicator && (
             // <ScrollIndicator />
             <ScrollIndicator>
@@ -51,10 +57,10 @@ const Hero: React.FC<HeroProps> = ({ headerAnimationComplete }: HeroProps) => {
               <span></span>
             </ScrollIndicator>
           )}
-        </ScrollIndicatorContainer>
+        </ScrollIndicatorContainer> */}
       </HeroContent>
     </HeroContainer>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

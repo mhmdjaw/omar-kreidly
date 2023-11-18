@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import GlobalStyle from "./baseline-styles";
-import LoadingScreen from "../LoadingScreen";
-import CustomCursor from "../CustomCursor";
-import { AnimatePresence } from "framer-motion";
+import React, { useState } from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import GlobalStyle from './baseline-styles'
+import LoadingScreen from '../LoadingScreen'
+import CustomCursor from '../CustomCursor'
+import { AnimatePresence } from 'framer-motion'
 
 interface WrapPageProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 const WrapPage: React.FC<WrapPageProps> = ({ children }: WrapPageProps) => {
-  const [animationComplete, setAnimationComplete] = useState(false);
+  const [animationComplete, setAnimationComplete] = useState(false)
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -20,7 +20,7 @@ const WrapPage: React.FC<WrapPageProps> = ({ children }: WrapPageProps) => {
         }
       }
     }
-  `);
+  `)
 
   return (
     <>
@@ -32,7 +32,7 @@ const WrapPage: React.FC<WrapPageProps> = ({ children }: WrapPageProps) => {
         <LoadingScreen setAnimationComplete={setAnimationComplete} />
       )}
     </>
-  );
-};
+  )
+}
 
-export default WrapPage;
+export default WrapPage

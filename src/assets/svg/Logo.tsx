@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 export const PrimaryLogo: React.FC = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1027.43 200.44">
@@ -12,7 +12,7 @@ export const PrimaryLogo: React.FC = () => (
       </g>
     </g>
   </svg>
-);
+)
 
 export const SecondaryLogo: React.FC = () => (
   <svg
@@ -31,4 +31,4 @@ export const SecondaryLogo: React.FC = () => (
 	C274.7,268.3,268.7,141.1,256,79.8z"
     />
   </svg>
-);
+)

@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import styled from "styled-components";
+import { motion } from 'framer-motion'
+import styled from 'styled-components'
 
 export const LoadingContainer = styled.div`
   position: fixed;
@@ -7,7 +7,7 @@ export const LoadingContainer = styled.div`
   height: calc(var(--vh, 1vh) * 100);
   background-color: ${(props) => props.theme.background};
   z-index: 9999;
-`;
+`
 
 export const Overlay = styled(motion.div)`
   position: absolute;
@@ -32,7 +32,7 @@ export const Overlay = styled(motion.div)`
     right: 0;
     background-color: ${(props) => props.theme.background};
   }
-`;
+`
 
 export const SvgContainer = styled(motion.div)`
   position: absolute;
@@ -45,4 +45,4 @@ export const SvgContainer = styled(motion.div)`
   width: 140px;
   mix-blend-mode: difference;
   fill: ${(props) => props.theme.text};
-`;
+`

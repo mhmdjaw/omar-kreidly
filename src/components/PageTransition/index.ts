@@ -1,1 +1,1 @@
-export { default } from "./PageTransition";
+export { default } from './PageTransition'

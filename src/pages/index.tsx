@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import { Header, Hero, PageTransition, SEO } from "../components";
-import { PageProps } from "gatsby";
+import React, { useState } from 'react'
+import { Header, Hero, PageTransition, SEO } from '../components'
+import { PageProps } from 'gatsby'
 
 export const Head = () => {
   return <SEO title="Designer & Photographer" />
 }
 
 const Home: React.FC<PageProps> = ({ location }: PageProps) => {
-  const [headerAnimationComplete, setHeaderAnimationComplete] = useState(false);
+  const [headerAnimationComplete, setHeaderAnimationComplete] = useState(false)
   return (
     <>
       <header>
@@ -22,7 +22,7 @@ const Home: React.FC<PageProps> = ({ location }: PageProps) => {
       </main>
       <PageTransition />
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

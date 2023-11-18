@@ -1,10 +1,10 @@
-import React from "react";
-import Header from "../Header";
-import PageTransition from "../PageTransition";
+import React from 'react'
+import Header from '../Header'
+import PageTransition from '../PageTransition'
 
 interface LayoutProps {
-  children: React.ReactNode;
-  pathname: string;
+  children: React.ReactNode
+  pathname: string
 }
 
 const Layout: React.FC<LayoutProps> = ({ children, pathname }: LayoutProps) => {
@@ -14,7 +14,7 @@ const Layout: React.FC<LayoutProps> = ({ children, pathname }: LayoutProps) => {
       <main>{children}</main>
       <PageTransition />
     </>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

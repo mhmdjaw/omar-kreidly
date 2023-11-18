@@ -1,1 +1,1 @@
-export { PrimaryLogo, SecondaryLogo } from "./Logo";
+export { PrimaryLogo, SecondaryLogo } from './Logo'

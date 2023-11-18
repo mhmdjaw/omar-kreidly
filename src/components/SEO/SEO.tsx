@@ -5,15 +5,15 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 
 interface SeoProps {
-  description?: string;
-  lang?: string;
+  description?: string
+  lang?: string
   // meta?: Record<string, unknown>[];
-  title: string;
-  children?: React.ReactNode;
+  title: string
+  children?: React.ReactNode
 }
 
 const SEO: React.FC<SeoProps> = ({
@@ -23,21 +23,19 @@ const SEO: React.FC<SeoProps> = ({
   title,
   children
 }: SeoProps) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
+  const { site } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          description
+          author
         }
       }
-    `
-  );
+    }
+  `)
 
-  const metaDescription = description || site.siteMetadata.description;
+  const metaDescription = description || site.siteMetadata.description
 
   return (
     // <Helmet
@@ -49,7 +47,7 @@ const SEO: React.FC<SeoProps> = ({
     //   meta={meta ? defaultMeta.concat(meta) : defaultMeta.concat()}
     // />
     <>
-      <html lang={lang || "en"} />
+      <html lang={lang || 'en'} />
       <title>{`${site.siteMetadata.title} | ${title}`}</title>
 
       <meta name="description" content={metaDescription} />
@@ -64,7 +62,7 @@ const SEO: React.FC<SeoProps> = ({
 
       {children}
     </>
-  );
-};
+  )
+}
 
-export default SEO;
+export default SEO

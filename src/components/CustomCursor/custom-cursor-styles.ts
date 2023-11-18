@@ -1,7 +1,7 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components'
 
 interface CursorProps {
-  hovered: boolean;
+  hovered: boolean
 }
 
 export const Cursor = styled.div<CursorProps>`
@@ -13,7 +13,9 @@ export const Cursor = styled.div<CursorProps>`
   width: 25px;
   mix-blend-mode: difference;
   transform: translate(-50%, -50%) rotateY(0);
-  transition: all 0.1s ease-out, transform 0.4s ease-out;
+  transition:
+    all 0.1s ease-out,
+    transform 0.4s ease-out;
   pointer-events: none;
   z-index: 999;
   ${({ hovered }) =>
@@ -21,4 +23,4 @@ export const Cursor = styled.div<CursorProps>`
     css`
       transform: translate(-50%, -50%) rotateY(180deg);
     `}
-`;
+`

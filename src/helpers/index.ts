@@ -1,1 +1,1 @@
-export { isBrowser, sleep, ease } from "./helpers";
+export { isBrowser, sleep, ease } from './helpers'

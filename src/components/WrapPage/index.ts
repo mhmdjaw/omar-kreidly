@@ -1,1 +1,1 @@
-export { default } from "./WrapPage";
+export { default } from './WrapPage'

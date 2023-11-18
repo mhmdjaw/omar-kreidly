@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import styled from "styled-components";
+import { motion } from 'framer-motion'
+import styled from 'styled-components'
 
 export const Cover = styled(motion.div)`
   width: 100%;
@@ -9,7 +9,7 @@ export const Cover = styled(motion.div)`
   background-color: ${(props) => props.theme.background};
   height: calc(100vh + 180px + 14vw);
   z-index: 5999;
-`;
+`
 
 export const WhiteStripe = styled(motion.div)`
   position: absolute;
@@ -18,4 +18,4 @@ export const WhiteStripe = styled(motion.div)`
   right: 0;
   height: 80px;
   background-color: ${(props) => props.theme.text};
-`;
+`
