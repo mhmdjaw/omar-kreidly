@@ -6,7 +6,7 @@ export const Head = () => {
   return <SEO title="Contact" />
 }
 
-const Contact: React.FC<PageProps> = ({ location }: PageProps) => {
+const Work: React.FC<PageProps> = ({ location }: PageProps) => {
   return (
     <Layout pathname={location.pathname}>
       <></>
@@ -14,4 +14,4 @@ const Contact: React.FC<PageProps> = ({ location }: PageProps) => {
   )
 }
 
-export default Contact
+export default Work

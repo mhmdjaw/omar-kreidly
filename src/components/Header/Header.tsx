@@ -16,12 +16,12 @@ interface HeaderProps {
 
 const navItems = [
   {
-    text: 'About',
-    link: '/about'
+    text: 'Work',
+    link: '/work'
   },
   {
-    text: 'Contact',
-    link: '/contact'
+    text: 'About',
+    link: '/about'
   }
 ]
 
