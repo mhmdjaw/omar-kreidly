@@ -65,6 +65,7 @@ export const Title = styled.h1`
   letter-spacing: 0.5rem; */
   margin: 0;
   overflow: hidden;
+  padding: 15px 0;
   ${theme.breakpoints.down('lg')} {
     font-size: 3.1rem;
   }
