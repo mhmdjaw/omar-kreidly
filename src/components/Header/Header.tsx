@@ -1,5 +1,5 @@
 import React from 'react'
-import { HeaderNav, Logo, NavItem } from './header-styles'
+import { HeaderNav, Logo, NavItem } from './styles'
 import useHeader from './Header.State'
 import { useMediaQuery } from 'react-responsive'
 import theme from '@src/theme'

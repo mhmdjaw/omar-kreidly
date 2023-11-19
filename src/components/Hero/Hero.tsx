@@ -1,5 +1,5 @@
 import React from 'react'
-import { HeroContainer, HeroContent, HeroImage, ScrollIndicator, ScrollIndicatorContainer, Title } from './hero-styles'
+import { HeroContainer, HeroContent, HeroImage, ScrollIndicator, ScrollIndicatorContainer, Title } from './styles'
 import heroImage from '../../assets/images/omar-kreidly.jpg'
 import { ease } from '../../helpers'
 import useHero from './Hero.State'

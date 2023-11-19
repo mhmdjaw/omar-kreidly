@@ -3,10 +3,10 @@ import styled, { css } from 'styled-components'
 
 interface ContainerProps {
   fluid?: boolean
+  disableFlexGrow?: boolean
 }
 
 export const Container = styled.div<ContainerProps>`
-  flex-grow: 1;
   margin: 0 auto;
   padding: 0 32px;
   position: relative;
@@ -28,6 +28,12 @@ export const Container = styled.div<ContainerProps>`
       /* padding: 0; */
       margin: 0;
       max-width: 100% !important;
+    `}
+
+  ${({ disableFlexGrow }) =>
+    disableFlexGrow &&
+    css`
+      flex-grow: 0;
     `}
 `
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { Cursor } from './custom-cursor-styles'
+import { Cursor } from './styles'
 import { isBrowser } from '@src/helpers'
 import { SecondaryLogo } from '@src/assets/svg'
 import { useGlobalContext } from '@src/context'
@@ -42,7 +42,7 @@ const CustomCursor: React.FC = () => {
   }, [])
 
   return (
-    <Cursor hovered={cursorType === 'hovered'} ref={cursorRef}>
+    <Cursor hovered={cursorType === 'hovered'} hidden={cursorType === 'hidden'} ref={cursorRef}>
       <SecondaryLogo />
     </Cursor>
   )

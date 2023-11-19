@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, SEO } from '../components'
+import { AboutSection, Layout, SEO } from '../components'
 import { PageProps } from 'gatsby'
 
 export const Head = () => {
@@ -9,7 +9,7 @@ export const Head = () => {
 const About: React.FC<PageProps> = ({ location }: PageProps) => {
   return (
     <Layout pathname={location.pathname}>
-      <></>
+      <AboutSection></AboutSection>
     </Layout>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Overlay, LoadingContainer, SvgContainer } from './loading-screen-styles'
+import { Overlay, LoadingContainer, SvgContainer } from './styles'
 import useLoadingScreen from './LoadingScreen.State'
 import { SecondaryLogo } from '@src/assets/svg'
 
