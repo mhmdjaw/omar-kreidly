@@ -1,7 +1,7 @@
+import theme from '@src/theme'
 import { motion } from 'framer-motion'
 import { Link, GatsbyLinkProps } from 'gatsby'
 import styled, { IStyledComponent, css } from 'styled-components'
-import theme from '../../theme'
 
 export const HeaderNav = styled(motion.div)`
   height: 0;

@@ -1,7 +1,7 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { GlobalProvider } from '../../context'
-import theme from '../../theme'
+import { GlobalProvider } from 'src/context'
+import theme from '@src/theme'
 
 interface ProvidersProps {
   children: React.ReactNode

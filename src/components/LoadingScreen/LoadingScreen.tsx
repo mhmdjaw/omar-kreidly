@@ -1,7 +1,7 @@
 import React from 'react'
-import { SecondaryLogo } from '../../assets/svg'
 import { Overlay, LoadingContainer, SvgContainer } from './loading-screen-styles'
 import useLoadingScreen from './LoadingScreen.State'
+import { SecondaryLogo } from '@src/assets/svg'
 
 interface LoadingScreenProps {
   setAnimationComplete: React.Dispatch<React.SetStateAction<boolean>>

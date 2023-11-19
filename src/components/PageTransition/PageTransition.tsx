@@ -1,6 +1,6 @@
 import React from 'react'
-import { ease } from '../../helpers'
 import { Cover, WhiteStripe } from './page-transition-styles'
+import { ease } from '@src/helpers'
 
 const PageTransition: React.FC = () => {
   return (

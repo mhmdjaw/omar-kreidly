@@ -1,4 +1,4 @@
-import { ease } from '../../helpers'
+import { ease } from '@src/helpers'
 
 const transition = {
   ease: ease.expoInOut,

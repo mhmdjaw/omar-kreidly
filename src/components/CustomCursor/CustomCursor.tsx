@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react'
-import { SecondaryLogo } from '../../assets/svg'
-import { useGlobalContext } from '../../context'
-import { isBrowser } from '../../helpers'
 import { Cursor } from './custom-cursor-styles'
+import { isBrowser } from '@src/helpers'
+import { SecondaryLogo } from '@src/assets/svg'
+import { useGlobalContext } from '@src/context'
 
 const CustomCursor: React.FC = () => {
   const { cursorType } = useGlobalContext()

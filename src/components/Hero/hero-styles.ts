@@ -1,6 +1,6 @@
+import { Flex } from '@src/styles/global-styles'
+import theme from '@src/theme'
 import styled, { keyframes } from 'styled-components'
-import { Flex } from '../../styles/global-styles'
-import theme from '../../theme'
 
 export const HeroContainer = styled.div`
   height: calc(var(--vh, 1vh) * 100);

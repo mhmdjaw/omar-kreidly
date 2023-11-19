@@ -1,12 +1,12 @@
 import React from 'react'
-import { PrimaryLogo } from '../../assets/svg'
-import { Container, Flex } from '../../styles/global-styles'
 import { HeaderNav, Logo, NavItem } from './header-styles'
 import useHeader from './Header.State'
 import { useMediaQuery } from 'react-responsive'
-import theme from '../../theme'
-import { ease } from '../../helpers'
-import { useGlobalContext } from '../../context'
+import theme from '@src/theme'
+import { useGlobalContext } from '@src/context'
+import { ease } from '@src/helpers'
+import { Container, Flex } from '@src/styles/global-styles'
+import { PrimaryLogo } from '@src/assets/svg'
 
 interface HeaderProps {
   onAnimationComplete?: () => void

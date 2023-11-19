@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Header, Hero, PageTransition, SEO } from '../components'
 import { PageProps } from 'gatsby'
+import { Header, Hero, PageTransition, SEO } from '@src/components'
 
 export const Head = () => {
   return <SEO title="Designer & Photographer" />

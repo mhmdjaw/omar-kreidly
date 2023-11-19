@@ -1,5 +1,5 @@
+import theme from '@src/theme'
 import styled, { css } from 'styled-components'
-import theme from '../theme'
 
 interface ContainerProps {
   fluid?: boolean

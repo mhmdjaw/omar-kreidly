@@ -1,6 +1,6 @@
 import React from 'react'
-import { Layout, SEO } from '../components'
 import { PageProps } from 'gatsby'
+import { Layout, SEO } from '@src/components'
 
 export const Head = () => {
   return <SEO title="Contact" />

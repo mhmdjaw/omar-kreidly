@@ -1,6 +1,6 @@
+import { sleep } from '@src/helpers'
 import { useAnimation } from 'framer-motion'
 import { useEffect } from 'react'
-import { sleep } from '../../helpers'
 
 const useHeader = (delayAnimation?: boolean, onAnimationComplete?: () => void) => {
   const headerControls = useAnimation()
