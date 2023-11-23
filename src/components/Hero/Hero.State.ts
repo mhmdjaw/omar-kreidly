@@ -9,7 +9,7 @@ const useHero = (headerAnimationComplete: boolean) => {
   const titleControls = useAnimation()
 
   const sequence = async () => {
-    await titleControls.start({ y: 0, opacity: 1 })
+    await titleControls.start({ y: 0, opacity: 1, skewY: 0 })
     setShowIndicator(true)
   }
 

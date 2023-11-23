@@ -5,7 +5,7 @@ const transition = {
   duration: 1.6
 }
 
-const loadingScreenVariants = {
+const variants = {
   svgVariants: {
     hidden: {
       rotateY: 90
@@ -42,4 +42,4 @@ const loadingScreenVariants = {
   }
 }
 
-export default loadingScreenVariants
+export default variants

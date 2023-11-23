@@ -1,10 +1,10 @@
 import React from 'react'
 import { HeroContainer, HeroContent, HeroImage, ScrollIndicator, ScrollIndicatorContainer, Title } from './styles'
 import heroImage from '../../assets/images/omar-kreidly.jpg'
-import { ease } from '../../helpers'
 import useHero from './Hero.State'
 import { motion } from 'framer-motion'
 import ReactTextTransition from 'react-text-transition'
+import { ease } from '@src/helpers'
 
 interface HeroProps {
   headerAnimationComplete: boolean
@@ -29,7 +29,7 @@ const Hero: React.FC<HeroProps> = ({ headerAnimationComplete }: HeroProps) => {
         <div />
         <Title>
           <motion.div
-            initial={{ y: '100%', opacity: 0 }}
+            initial={{ y: '100%', opacity: 0, skewY: 7 }}
             transition={{ ease: ease.slideIn, duration: 1 }}
             animate={titleControls}
           >

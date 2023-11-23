@@ -32,6 +32,10 @@ export const Text = styled.h2`
   font-weight: 500;
   line-height: 1.5;
   font-size: 1.7rem;
+  text-align: justify;
+  &::first-letter {
+    initial-letter: 4 3;
+  }
   ${theme.breakpoints.down('lg')} {
     font-size: 1.3rem;
   }
@@ -63,6 +67,7 @@ export const CoppyContainer = styled.div<CoppyContainerProps>`
 
 export const CopyButton = styled.button`
   background-color: ${(props) => props.theme.text};
+  color: ${(props) => props.theme.background};
   border: none;
   border-radius: 50%;
   padding: 10px;
@@ -93,7 +98,7 @@ export const IconsContainer = styled(Flex)`
   align-items: stretch;
   margin-bottom: 16px;
   & > a {
-    margin-left: 24px;
+    margin-left: 32px;
   }
   ${theme.breakpoints.down('sm')} {
     height: 30px;

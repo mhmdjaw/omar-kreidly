@@ -1,10 +1,10 @@
 import { useAnimation } from 'framer-motion'
 import { useEffect } from 'react'
-import loadingScreenVariants from './loading-screen-variants'
+import variants from './variants'
 import { sleep } from '@src/helpers'
 
 const useLoadingScreen = (setAnimationComplete: React.Dispatch<React.SetStateAction<boolean>>) => {
-  const { svgVariants, overlayVertical, overlayHorizontal } = loadingScreenVariants
+  const { svgVariants, overlayVertical, overlayHorizontal } = variants
   const overlay1Controls = useAnimation()
   const overlay2Controls = useAnimation()
   const overlay3Controls = useAnimation()
