@@ -13,7 +13,7 @@ interface MenuProps {
 const navItems = [
   {
     text: 'home',
-    link: '/work'
+    link: '/'
   },
   {
     text: 'work',

@@ -1,5 +1,6 @@
 import { Flex } from '@src/styles/global-styles'
 import theme from '@src/theme'
+import { motion } from 'framer-motion'
 import styled, { keyframes } from 'styled-components'
 
 export const HeroContainer = styled.div`
@@ -8,40 +9,27 @@ export const HeroContainer = styled.div`
   overflow: hidden;
 `
 
-const introImgOpacity = keyframes`
-  from {
-    opacity: 0;
-    filter: grayscale(1) brightness(1);
-    transform: scale(1.1);
-  }
-
-  to {
-    opacity: 1;
-    filter: grayscale(1) brightness(1);
-    transform: scale(1);
-  }
-`
-
-const introImgGrayscale = keyframes`
-  from {
-    filter: grayscale(1) brightness(1);
-  }
-
-  to {
-    filter: grayscale(0) brightness(0.7);
-  }
-`
-
 export const HeroImage = styled.img`
-  position: relative;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  height: calc(var(--vh, 1vh) * 85);
+  width: auto;
+  max-width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
   object-fit: cover;
   object-position: center top;
-  filter: brightness(0.7);
-  animation:
-    1.5s ease-in-out 0s 1 ${introImgOpacity},
-    3s linear 1.5s 1 ${introImgGrayscale};
+  transform: translateX(7vw);
+  overflow: visible;
+`
+export const ImageCover = styled(motion.div)`
+  position: absolute;
+  height: calc(var(--vh, 1vh) * 85);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: ${(props) => props.theme.background};
 `
 
 export const HeroContent = styled(Flex)`
@@ -59,6 +47,7 @@ export const HeroContent = styled(Flex)`
 `
 
 export const Title = styled.h1`
+  mix-blend-mode: difference;
   font-size: 4rem;
   /* font-weight: 600;
   text-transform: uppercase;
@@ -95,56 +84,55 @@ export const Title = styled.h1`
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        mix-blend-mode: difference;
       }
     }
   }
 `
 
-const scrollAnimation = keyframes`
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-`
+// const scrollAnimation = keyframes`
+//   0% {
+//     opacity: 0;
+//   }
+//   50% {
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 0;
+//   }
+// `
 
-export const ScrollIndicator = styled.div`
-  position: relative;
-  ${theme.breakpoints.down('md')} {
-    transform: scale(0.6);
-  }
-  & span {
-    position: absolute;
-    top: 0;
-    width: 24px;
-    height: 24px;
-    border-left: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-    transform: rotate(-45deg) translate(150%, -150%);
-    animation: ${scrollAnimation} 2s infinite;
-    opacity: 0;
-    &:nth-of-type(1) {
-      animation-delay: 0s;
-    }
-    &:nth-of-type(2) {
-      top: 16px;
-      animation-delay: 0.15ss;
-    }
-    &:nth-of-type(3) {
-      top: 32px;
-      animation-delay: 0.3s;
-    }
-  }
-`
+// export const ScrollIndicator = styled.div`
+//   position: relative;
+//   ${theme.breakpoints.down('md')} {
+//     transform: scale(0.6);
+//   }
+//   & span {
+//     position: absolute;
+//     top: 0;
+//     width: 24px;
+//     height: 24px;
+//     border-left: 1px solid #fff;
+//     border-bottom: 1px solid #fff;
+//     transform: rotate(-45deg) translate(150%, -150%);
+//     animation: ${scrollAnimation} 2s infinite;
+//     opacity: 0;
+//     &:nth-of-type(1) {
+//       animation-delay: 0s;
+//     }
+//     &:nth-of-type(2) {
+//       top: 16px;
+//       animation-delay: 0.15ss;
+//     }
+//     &:nth-of-type(3) {
+//       top: 32px;
+//       animation-delay: 0.3s;
+//     }
+//   }
+// `
 
-export const ScrollIndicatorContainer = styled(Flex)`
-  flex-basis: 50%;
-`
+// export const ScrollIndicatorContainer = styled(Flex)`
+//   flex-basis: 50%;
+// `
 
 // const scrollAnimation = keyframes`
 //   0% {

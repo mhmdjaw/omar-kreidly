@@ -3,6 +3,7 @@ import { Overlay, SectionTitle, WorkContainer } from './styles'
 import variants from './variants'
 import { Flex } from '@src/styles/global-styles'
 import { motion, useAnimation } from 'framer-motion'
+import { navigate } from 'gatsby'
 
 const WorkSection: React.FC = () => {
   const titleControls = useAnimation()
@@ -23,6 +24,7 @@ const WorkSection: React.FC = () => {
         }}
         invert={inverted}
         addTransition={titleAnimationComplete}
+        onClick={() => navigate('/work/photography')}
       >
         <Flex>
           <SectionTitle>

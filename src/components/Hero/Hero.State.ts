@@ -7,6 +7,8 @@ const useHero = (headerAnimationComplete: boolean) => {
   const [index, setIndex] = useState(0)
   const [showIndicator, setShowIndicator] = useState(false)
   const titleControls = useAnimation()
+  const coverControls = useAnimation()
+  const [imageLoaded, setImageLoaded] = useState(false)
 
   const sequence = async () => {
     await titleControls.start({ y: 0, opacity: 1, skewY: 0 })
@@ -31,7 +33,7 @@ const useHero = (headerAnimationComplete: boolean) => {
     [headerAnimationComplete]
   )
 
-  return { showIndicator, titleControls, headlines, index }
+  return { showIndicator, titleControls, coverControls, headlines, index, imageLoaded, setImageLoaded }
 }
 
 export default useHero

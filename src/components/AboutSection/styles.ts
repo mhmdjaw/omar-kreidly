@@ -30,11 +30,12 @@ export const Footer = styled(Container)`
 export const Text = styled.h2`
   margin: 0;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.7;
   font-size: 1.7rem;
   text-align: justify;
   &::first-letter {
     initial-letter: 4 3;
+    margin-right: 15px;
   }
   ${theme.breakpoints.down('lg')} {
     font-size: 1.3rem;
@@ -95,12 +96,30 @@ export const CopyButton = styled.button`
 
 export const IconsContainer = styled(Flex)`
   height: 50px;
-  align-items: stretch;
   margin-bottom: 16px;
-  & > a {
-    margin-left: 32px;
+  & > div {
+    height: 100%;
+    align-items: stretch;
+    & > a:not(:first-of-type) {
+      margin-left: 32px;
+    }
   }
   ${theme.breakpoints.down('sm')} {
     height: 30px;
+  }
+`
+
+export const Developer = styled.p`
+  & a {
+    display: inline-block;
+    font-weight: 600;
+    transition: all 0.2s;
+    &:hover {
+      transform: rotateZ(-7deg);
+      word-spacing: 7px;
+    }
+  }
+  ${theme.breakpoints.down('sm')} {
+    font-size: 0.6rem;
   }
 `

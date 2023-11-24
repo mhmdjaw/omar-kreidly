@@ -5,6 +5,7 @@ import {
   AboutText,
   CoppyContainer,
   CopyButton,
+  Developer,
   Footer,
   IconsContainer,
   Text
@@ -13,6 +14,7 @@ import ReactTextTransition from 'react-text-transition'
 import { useGlobalContext } from '@src/context'
 import { BehanceIcon, InstagramIcon, LinkedinIcon } from '@src/assets/svg'
 import theme from '@src/theme'
+import { Flex } from '@src/styles/global-styles'
 
 const svgIcons = [
   {
@@ -43,7 +45,7 @@ const AboutSection: React.FC = () => {
             combines capturing the world&#8217;s beauty through my camera lens with crafting user-centric digital
             experiences. With a keen eye for detail and a commitment to excellence, I specialize in creating exceptional
             visuals and functional interfaces. Explore my portfolio and let&#8217;s collaborate to transform your vision
-            into stunning imagery and intuitive user experiences. W ana wahad byentek bitizo 👌👍
+            into stunning imagery and intuitive user experiences.
           </Text>
         </AboutText>
         <CoppyContainer
@@ -70,17 +72,31 @@ const AboutSection: React.FC = () => {
           </div>
         </CoppyContainer>
         <Footer fluid>
-          <IconsContainer flexEnd>
-            {svgIcons.map(({ Icon, link }, i) => (
+          <IconsContainer spaceBetween>
+            <Developer>
+              Coded by{' '}
               <a
-                href={link}
-                key={i}
                 onMouseEnter={() => onCursor('hovered')}
                 onMouseLeave={() => onCursor('unhovered')}
+                href="https://www.linkedin.com/in/mohamadjawhar/"
+                target="_blank"
+                rel="noreferrer"
               >
-                <Icon height="100%" fill={theme.text} />
+                Mohamad Jawhar
               </a>
-            ))}
+            </Developer>
+            <Flex>
+              {svgIcons.map(({ Icon, link }, i) => (
+                <a
+                  href={link}
+                  key={i}
+                  onMouseEnter={() => onCursor('hovered')}
+                  onMouseLeave={() => onCursor('unhovered')}
+                >
+                  <Icon height="100%" fill={theme.text} />
+                </a>
+              ))}
+            </Flex>
           </IconsContainer>
         </Footer>
       </AboutContent>

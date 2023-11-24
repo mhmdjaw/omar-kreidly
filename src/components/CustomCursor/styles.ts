@@ -15,7 +15,7 @@ export const Cursor = styled.div<CursorProps>`
   mix-blend-mode: difference;
   transform: translate(-50%, -50%) rotateY(0);
   transition:
-    all 0.1s ease-out,
+    all 0.06s ease-out,
     transform 0.4s ease-out;
   pointer-events: none;
   z-index: 999;
