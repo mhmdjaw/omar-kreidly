@@ -13,7 +13,7 @@ export const Cursor = styled.div<CursorProps>`
   fill: #fff;
   width: 25px;
   mix-blend-mode: difference;
-  transform: translate(-50%, -50%) rotateY(0);
+  transform: translate(-50%, -50%) rotateY(0) scale(1);
   transition:
     all 0.06s ease-out,
     transform 0.4s ease-out;
@@ -27,6 +27,9 @@ export const Cursor = styled.div<CursorProps>`
   ${({ hidden }) =>
     hidden &&
     css`
-      visibility: hidden;
+      transform: translate(-50%, -50%) scale(0.01);
+      transition:
+        all 0.06s ease-out,
+        transform 0.3s ease-out;
     `}
 `

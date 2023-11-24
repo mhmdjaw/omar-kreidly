@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import styled, { css } from 'styled-components'
 
 export const WorkContainer = styled(motion.div)`
-  position: fixed;
+  position: relative;
   width: 100%;
   height: calc(var(--vh, 1vh) * 100);
 `

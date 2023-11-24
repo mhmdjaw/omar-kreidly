@@ -50,7 +50,7 @@ const WorkSection: React.FC = () => {
         <Flex>
           <SectionTitle>
             <motion.div variants={variants.title} initial="hidden" animate={titleControls}>
-              UX/UI Design
+              UI/UX Design
             </motion.div>
           </SectionTitle>
         </Flex>
