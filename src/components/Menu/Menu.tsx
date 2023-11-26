@@ -4,7 +4,7 @@ import { Container, Flex } from '@src/styles/global-styles'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useGlobalContext } from '@src/context'
 import variants from './variants'
-import { ease } from '@src/helpers'
+import { ease, isTouchDevice } from '@src/helpers'
 
 interface MenuProps {
   pathname: string
@@ -46,10 +46,21 @@ const Menu: React.FC<MenuProps> = ({ pathname }: MenuProps) => {
                 onHoverEnd={() => onCursor('unhovered')}
                 onClick={() => setToggleMenu(!toggleMenu)}
               >
-                <motion.span variants={variants.letter}>m</motion.span>
-                <motion.span variants={variants.letter}>e</motion.span>
-                <motion.span variants={variants.letter}>n</motion.span>
-                <motion.span variants={variants.letter}>u</motion.span>
+                {isTouchDevice() ? (
+                  <>
+                    <span>m</span>
+                    <span>e</span>
+                    <span>n</span>
+                    <span>u</span>
+                  </>
+                ) : (
+                  <>
+                    <motion.span variants={variants.letter}>m</motion.span>
+                    <motion.span variants={variants.letter}>e</motion.span>
+                    <motion.span variants={variants.letter}>n</motion.span>
+                    <motion.span variants={variants.letter}>u</motion.span>
+                  </>
+                )}
               </MenuButton>
             </motion.div>
           </Flex>

@@ -15,6 +15,7 @@ import { useGlobalContext } from '@src/context'
 import { BehanceIcon, InstagramIcon, LinkedinIcon } from '@src/assets/svg'
 import theme from '@src/theme'
 import { Flex } from '@src/styles/global-styles'
+import { isTouchDevice } from '@src/helpers'
 
 const svgIcons = [
   {
@@ -66,7 +67,7 @@ const AboutSection: React.FC = () => {
                 onCursor('unhovered')
               }}
             >
-              <ReactTextTransition>{buttonText}</ReactTextTransition>
+              {isTouchDevice() ? 'Copy Email' : <ReactTextTransition>{buttonText}</ReactTextTransition>}
             </CopyButton>
             <CopyButton>Email Copied!</CopyButton>
           </div>

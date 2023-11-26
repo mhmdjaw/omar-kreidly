@@ -9,3 +9,11 @@ export const ease = {
 export const sleep = (ms: number) => {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
+
+export const isTouchDevice = () => {
+  if (isBrowser) {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0
+  }
+
+  return false
+}

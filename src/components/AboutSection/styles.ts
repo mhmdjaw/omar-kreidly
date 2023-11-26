@@ -15,6 +15,9 @@ export const AboutContent = styled(motion(Flex))`
   left: 0;
   right: 0;
   bottom: 0;
+  ${theme.breakpoints.down('sm')} {
+    top: calc(var(--vh, 1vh) * 15);
+  }
 `
 export const AboutText = styled(Container)`
   flex-grow: 0;
@@ -35,6 +38,7 @@ export const Text = styled.h2`
   text-align: justify;
   &::first-letter {
     initial-letter: 4 3;
+    -webkit-initial-letter: 4 3;
     margin-right: 15px;
   }
   ${theme.breakpoints.down('lg')} {
@@ -100,8 +104,15 @@ export const IconsContainer = styled(Flex)`
   & > div {
     height: 100%;
     align-items: stretch;
-    & > a:not(:first-of-type) {
-      margin-left: 32px;
+    & > a {
+      display: inline-block;
+      height: 100%;
+      &:not(:first-of-type) {
+        margin-left: 32px;
+        ${theme.breakpoints.down('md')} {
+          margin-left: 16px;
+        }
+      }
     }
   }
   ${theme.breakpoints.down('sm')} {

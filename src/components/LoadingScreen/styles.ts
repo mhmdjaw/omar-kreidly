@@ -34,9 +34,11 @@ export const Overlay = styled(motion.div)`
   }
 `
 
-export const SvgContainer = styled(motion.div)`
+export const SvgContainer = styled.div`
   position: absolute;
-  display: inline-flex;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
   top: 0;
   left: 0;
   right: 0;
@@ -45,4 +47,7 @@ export const SvgContainer = styled(motion.div)`
   width: 140px;
   mix-blend-mode: difference;
   fill: ${(props) => props.theme.text};
+  & > div {
+    width: 100%;
+  }
 `
