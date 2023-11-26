@@ -8,7 +8,7 @@ import {
   // ScrollIndicatorContainer,
   Title
 } from './styles'
-import heroImage from '../../assets/images/omar-kreidly.png'
+import heroImage from '@src/assets/images/omar-kreidly.png'
 import useHero from './Hero.State'
 import { motion } from 'framer-motion'
 import ReactTextTransition from 'react-text-transition'
@@ -23,7 +23,6 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ headerAnimationComplete }: HeroProps) => {
   const { showIndicator, titleControls, coverControls, headlines, index, imageLoaded, setImageLoaded } =
     useHero(headerAnimationComplete)
-  console.log(imageLoaded)
 
   return (
     <HeroContainer>

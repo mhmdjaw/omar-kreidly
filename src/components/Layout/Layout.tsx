@@ -8,17 +8,17 @@ interface LayoutProps {
   pathname: string
 }
 
-const HeaderPath = ['/about']
-const MenuPath = ['/work', '/work/photography']
+const HeaderPath = ['/about', '/not-found']
+// const MenuPath = ['/work', '/work/photography']
 
 const Layout: React.FC<LayoutProps> = ({ children, pathname }: LayoutProps) => {
   const isHeader = HeaderPath.includes(pathname)
-  const isMenu = MenuPath.includes(pathname)
+  // const isMenu = MenuPath.includes(pathname)
 
   return (
     <>
-      {isHeader && <Header pathname={pathname} />}
-      {isMenu && <Menu pathname={pathname} />}
+      {isHeader ? <Header pathname={pathname} /> : <Menu pathname={pathname} />}
+      {/* {isMenu && <Menu pathname={pathname} />} */}
       <main>{children}</main>
       <PageTransition />
     </>

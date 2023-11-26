@@ -71,7 +71,7 @@ const Menu: React.FC<MenuProps> = ({ pathname }: MenuProps) => {
                   onMouseEnter={() => onCursor('hovered')}
                   onMouseLeave={() => onCursor('unhovered')}
                 >
-                  {text}
+                  <div>{text}</div>
                 </NavItem>
               ))}
             </Flex>

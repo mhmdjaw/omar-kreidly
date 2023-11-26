@@ -11,11 +11,7 @@ const Home: React.FC<PageProps> = ({ location }: PageProps) => {
   return (
     <>
       <header>
-        <Header
-          delayAnimation
-          onAnimationComplete={() => setHeaderAnimationComplete(true)}
-          pathname={location.pathname}
-        />
+        <Header onAnimationComplete={() => setHeaderAnimationComplete(true)} pathname={location.pathname} />
       </header>
       <main>
         <Hero headerAnimationComplete={headerAnimationComplete} />

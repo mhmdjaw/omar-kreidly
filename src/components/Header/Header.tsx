@@ -10,7 +10,6 @@ import { PrimaryLogo } from '@src/assets/svg'
 
 interface HeaderProps {
   onAnimationComplete?: () => void
-  delayAnimation?: boolean
   pathname: string
 }
 
@@ -25,8 +24,8 @@ const navItems = [
   }
 ]
 
-const Header: React.FC<HeaderProps> = ({ onAnimationComplete, delayAnimation, pathname }: HeaderProps) => {
-  const { headerControls } = useHeader(delayAnimation, onAnimationComplete)
+const Header: React.FC<HeaderProps> = ({ onAnimationComplete, pathname }: HeaderProps) => {
+  const { headerControls } = useHeader(onAnimationComplete)
   const isMobile = useMediaQuery({ maxWidth: theme.breakpoints.sm })
   const { onCursor } = useGlobalContext()
 

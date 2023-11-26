@@ -59,44 +59,49 @@ export const Nav = styled(motion.div)`
   }
 `
 export const NavItem = styled(Link)`
-  position: relative;
-  font-size: 3.5rem;
-  font-weight: 600;
-  text-transform: uppercase;
   margin: calc(var(--vh, 1vh) * 5) 0;
-  transition: 0.45s cubic-bezier(0.57, -0.3, 0.41, 1.29);
-  ${theme.breakpoints.down('lg')} {
-    font-size: 3rem;
-  }
-  ${theme.breakpoints.down('md')} {
-    font-size: 2.5rem;
-  }
-  ${theme.breakpoints.down('sm')} {
-    font-size: 2rem;
-  }
-  &::after {
-    content: '';
-    position: absolute;
-    aspect-ratio: 1 / 1;
-    height: 35%;
-    border-radius: 50%;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%);
-    background-color: ${(props) => props.theme.text};
-    opacity: 0;
+  & > div {
+    position: relative;
+    font-size: 3.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
     transition: 0.45s cubic-bezier(0.57, -0.3, 0.41, 1.29);
-  }
-  &:hover {
-    transform: translateX(70px);
+    ${theme.breakpoints.down('lg')} {
+      font-size: 3rem;
+    }
     ${theme.breakpoints.down('md')} {
-      transform: translateX(50px);
+      font-size: 2.5rem;
+    }
+    ${theme.breakpoints.down('sm')} {
+      font-size: 2rem;
     }
     &::after {
-      transform: translateX(-70px) translateY(-50%);
-      opacity: 1;
+      content: '';
+      position: absolute;
+      aspect-ratio: 1 / 1;
+      height: 35%;
+      border-radius: 50%;
+      top: 50%;
+      left: 15px;
+      transform: translateY(-50%);
+      background-color: ${(props) => props.theme.text};
+      opacity: 0;
+      transition: 0.45s cubic-bezier(0.57, -0.3, 0.41, 1.29);
+    }
+  }
+
+  &:hover {
+    & > div {
+      transform: translateX(70px);
       ${theme.breakpoints.down('md')} {
-        transform: translateX(-50px) translateY(-50%);
+        transform: translateX(50px);
+      }
+      &::after {
+        transform: translateX(-70px) translateY(-50%);
+        opacity: 1;
+        ${theme.breakpoints.down('md')} {
+          transform: translateX(-50px) translateY(-50%);
+        }
       }
     }
   }
