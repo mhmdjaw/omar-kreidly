@@ -15,6 +15,9 @@ export const MenuContainer = styled.div<MenuContainerProps>`
   right: 0;
   left: 0;
   z-index: 99;
+  ${theme.breakpoints.down('sm')} {
+    top: 50px;
+  }
   ${({ isWorkPage }) =>
     isWorkPage &&
     css`
@@ -34,11 +37,18 @@ export const MenuButton = styled(motion.button)`
   font-size: 0.9rem;
   letter-spacing: 2px;
   overflow: hidden;
+  box-shadow:
+    0 0 2.2px rgba(0, 0, 0, 0.034),
+    0 0 5.3px rgba(0, 0, 0, 0.048),
+    0 0 10px rgba(0, 0, 0, 0.06),
+    0 0 17.9px rgba(0, 0, 0, 0.072),
+    0 0 33.4px rgba(0, 0, 0, 0.086),
+    0 0 80px rgba(0, 0, 0, 0.12);
   ${theme.breakpoints.down('sm')} {
     padding: 10px;
-    min-height: 70px;
-    width: 70px;
-    font-size: 0.7rem;
+    min-height: 60px;
+    width: 60px;
+    font-size: 0.6rem;
   }
   & span {
     display: inline-block;

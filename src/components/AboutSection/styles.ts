@@ -40,6 +40,11 @@ export const Text = styled.h2`
     initial-letter: 4 3;
     -webkit-initial-letter: 4 3;
     margin-right: 15px;
+    ${theme.breakpoints.down('sm')} {
+      initial-letter: 3 2;
+      -webkit-initial-letter: 3 2;
+      margin-right: 7px;
+    }
   }
   ${theme.breakpoints.down('lg')} {
     font-size: 1.3rem;

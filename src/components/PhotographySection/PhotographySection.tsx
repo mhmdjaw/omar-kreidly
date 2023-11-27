@@ -10,6 +10,8 @@ import { useMenuAnimation } from '@src/helpers'
 import { variants } from './variants'
 import { useMediaQuery } from 'react-responsive'
 import theme from '@src/theme'
+import { navigate } from 'gatsby'
+import Loading from '../Loading'
 
 const PhotographySection: React.FC = () => {
   const animationControls = useAnimationControls()
@@ -24,8 +26,8 @@ const PhotographySection: React.FC = () => {
     setImagesLoading(-1)
   }
 
-  return (
-    menuAnimationComplete && (
+  return menuAnimationComplete ? (
+    <>
       <PhotographySectionContainer
         initial="hidden"
         animate={animationControls}
@@ -34,7 +36,7 @@ const PhotographySection: React.FC = () => {
         column={isMobile}
       >
         <Flex>
-          <Flex>
+          <Flex onClick={() => navigate('/work/photography/portrait')}>
             <motion.img src={portrait1} onLoad={() => setImagesLoading((s) => s - 1)} variants={variants.image} />
             <div className="overlay">
               <h1>Portrait</h1>
@@ -70,7 +72,10 @@ const PhotographySection: React.FC = () => {
           </Flex>
         </Flex>
       </PhotographySectionContainer>
-    )
+      {imagesLoading > 0 && <Loading />}
+    </>
+  ) : (
+    <Loading />
   )
 }
 

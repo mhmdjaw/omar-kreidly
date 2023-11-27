@@ -49,9 +49,6 @@ export const HeroContent = styled(Flex)`
 export const Title = styled.h1`
   mix-blend-mode: difference;
   font-size: 4rem;
-  /* font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5rem; */
   margin: 0;
   overflow: hidden;
   padding: 15px 0;

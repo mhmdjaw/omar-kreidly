@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+// import { useStaticQuery, graphql } from 'gatsby'
 import GlobalStyle from './baseline-styles'
 import LoadingScreen from '../LoadingScreen'
 import CustomCursor from '../CustomCursor'
@@ -12,15 +12,15 @@ interface WrapPageProps {
 const WrapPage: React.FC<WrapPageProps> = ({ children }: WrapPageProps) => {
   const [animationComplete, setAnimationComplete] = useState(false)
 
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+  // const data = useStaticQuery(graphql`
+  //   query SiteTitleQuery {
+  //     site {
+  //       siteMetadata {
+  //         title
+  //       }
+  //     }
+  //   }
+  // `)
 
   return (
     <>

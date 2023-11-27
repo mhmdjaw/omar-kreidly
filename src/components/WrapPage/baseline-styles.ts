@@ -19,12 +19,14 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: montserrat;
-    overscroll-behavior: none;
-    /* overflow-x: hidden; */
+    /* height: calc(var(--vh, 1vh) * 100); */
+    /* overscroll-behavior: none;
+    overflow-x: hidden; */
   }
 
   html, body {
     background-color: ${(props) => props.theme.background};
+    visibility: hidden;
   }
 
   *, *::before, *::after {
@@ -37,14 +39,18 @@ const GlobalStyle = createGlobalStyle`
     color: ${(props) => props.theme.text}
   }
 
-  /* body::-webkit-scrollbar {
+  body::-webkit-scrollbar {
     display: none;
   }
 
   body {
     -ms-overflow-style: none;
     scrollbar-width: none;
-  } */
+  }
+
+  main {
+    height: calc(var(--vh, 1vh) * 100);
+  }
 `
 
 export default GlobalStyle
