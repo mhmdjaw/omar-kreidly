@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useGlobalContext } from '@src/context'
 import variants from './variants'
 import { ease, isTouchDevice } from '@src/helpers'
+import { navigate } from 'gatsby'
 
 interface MenuProps {
   pathname: string
@@ -31,11 +32,24 @@ const Menu: React.FC<MenuProps> = ({ pathname }: MenuProps) => {
 
   const isWorkPage = pathname === '/work'
 
+  const hideBackButton = ['/work', '/work/photography', '/work/design'].includes(pathname)
+
   return (
     <>
       <MenuContainer isWorkPage={isWorkPage}>
         <Container fluid>
-          <Flex flexEnd noHeight>
+          <Flex flexEnd={hideBackButton} spaceBetween={!hideBackButton} noHeight>
+            {!hideBackButton && (
+              <motion.a
+                onClick={() => navigate(-1)}
+                onHoverStart={() => onCursor('hovered')}
+                onHoverEnd={() => onCursor('unhovered')}
+              >
+                <motion.h4 initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+                  Back
+                </motion.h4>
+              </motion.a>
+            )}
             <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 0.3 }}>
               <MenuButton
                 variants={variants.button}

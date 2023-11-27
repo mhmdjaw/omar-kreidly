@@ -65,12 +65,26 @@ export const PhotographySectionContainer = styled(motion(Flex))<PhotographySecti
           }
         }
       }
-      &:hover {
-        & img {
-          filter: opacity(100%);
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          & img {
+            filter: opacity(100%);
+          }
+          & .overlay {
+            opacity: 0;
+          }
         }
-        & .overlay {
-          opacity: 0;
+      }
+
+      @media (hover: none) {
+        &:active {
+          & img {
+            filter: opacity(100%);
+          }
+          & .overlay {
+            opacity: 0;
+          }
         }
       }
 

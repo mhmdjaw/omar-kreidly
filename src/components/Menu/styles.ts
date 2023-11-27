@@ -23,6 +23,19 @@ export const MenuContainer = styled.div<MenuContainerProps>`
     css`
       mix-blend-mode: difference;
     `}
+  & a {
+    padding: 10px 0;
+    transition: all 0.3s;
+    &:hover {
+      opacity: 0;
+    }
+  }
+  & h4 {
+    margin: 0;
+    ${theme.breakpoints.down('sm')} {
+      font-size: 0.7rem;
+    }
+  }
 `
 
 export const MenuButton = styled(motion.button)`

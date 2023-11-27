@@ -3,6 +3,7 @@ import Header from '../Header'
 import PageTransition from '../PageTransition'
 import Menu from '../Menu'
 import Scrollbar from 'smooth-scrollbar'
+import { isTouchDevice } from '@src/helpers'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -18,7 +19,7 @@ const Layout: React.FC<LayoutProps> = ({ children, pathname }: LayoutProps) => {
   // const isMenu = MenuPath.includes(pathname)
 
   useEffect(() => {
-    if (mainEl.current && !Scrollbar.has(mainEl.current)) {
+    if (mainEl.current && !Scrollbar.has(mainEl.current) && !isTouchDevice()) {
       Scrollbar.init(mainEl.current, { damping: 0.04 })
       Scrollbar.detachStyle()
     }
