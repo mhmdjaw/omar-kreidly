@@ -18,7 +18,7 @@ const WorkSection: React.FC = () => {
     <WorkContainer initial="hidden" animate="visible">
       <Overlay
         variants={variants.overlay}
-        onAnimationComplete={() => startTitleAnimation()}
+        onAnimationComplete={startTitleAnimation}
         onMouseOver={() => {
           titleAnimationComplete && setInverted(false)
         }}

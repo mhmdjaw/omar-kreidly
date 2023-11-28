@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { PhotographySectionContainer } from './styles'
 import portrait1 from '@src/assets/images/portraits/portrait1.jpg'
-import nudes1 from '@src/assets/images/nudes/nudes1.jpg'
+import nude1 from '@src/assets/images/nudes/nude1.jpg'
 import documentary1 from '@src/assets/images/documentaries/documentary1.jpg'
 import automotive1 from '@src/assets/images/automotives/automotive1.jpg'
 import { Flex } from '@src/styles/global-styles'
@@ -43,8 +43,8 @@ const PhotographySection: React.FC = () => {
             </div>
             <motion.div className="cover" variants={variants.cover} />
           </Flex>
-          <Flex>
-            <motion.img src={nudes1} onLoad={() => setImagesLoading((s) => s - 1)} variants={variants.image} />
+          <Flex onClick={() => navigate('/work/photography/nude')}>
+            <motion.img src={nude1} onLoad={() => setImagesLoading((s) => s - 1)} variants={variants.image} />
             <div className="overlay">
               <h1>Nudes</h1>
             </div>

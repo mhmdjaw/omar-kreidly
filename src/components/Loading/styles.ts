@@ -53,6 +53,7 @@ export const InnerContainer = styled.div`
     transform-origin: center top;
     transform: translateY(-50%);
     width: 40px;
+    height: 50px;
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
     fill: ${(props) => props.theme.text};
   }
