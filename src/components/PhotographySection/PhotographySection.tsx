@@ -3,7 +3,7 @@ import { PhotographySectionContainer } from './styles'
 import portrait1 from '@src/assets/images/portraits/portrait1.jpg'
 import nude1 from '@src/assets/images/nudes/nude1.jpg'
 import documentary1 from '@src/assets/images/documentaries/documentary1.jpg'
-import automotive1 from '@src/assets/images/automotives/automotive1.jpg'
+import automotive7 from '@src/assets/images/automotives/automotive7.jpg'
 import { Flex } from '@src/styles/global-styles'
 import { motion, useAnimationControls } from 'framer-motion'
 import { useMenuAnimation } from '@src/helpers'
@@ -59,8 +59,8 @@ const PhotographySection: React.FC = () => {
             </div>
             <motion.div className="cover" variants={variants.cover} />
           </Flex>
-          <Flex>
-            <motion.img src={automotive1} onLoad={() => setImagesLoading((s) => s - 1)} variants={variants.image} />
+          <Flex onClick={() => navigate('/work/photography/automotive')}>
+            <motion.img src={automotive7} onLoad={() => setImagesLoading((s) => s - 1)} variants={variants.image} />
             <div className="overlay">
               <h1>Automotive</h1>
             </div>
