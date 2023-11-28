@@ -52,7 +52,7 @@ const PhotographySection: React.FC = () => {
           </Flex>
         </Flex>
         <Flex>
-          <Flex>
+          <Flex onClick={() => navigate('/work/photography/documentary')}>
             <motion.img src={documentary1} onLoad={() => setImagesLoading((s) => s - 1)} variants={variants.image} />
             <div className="overlay">
               <h1>Documentary</h1>

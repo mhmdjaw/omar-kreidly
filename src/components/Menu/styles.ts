@@ -35,6 +35,13 @@ export const MenuContainer = styled.div<MenuContainerProps>`
     ${theme.breakpoints.down('sm')} {
       font-size: 0.7rem;
     }
+    text-shadow:
+      0 0 2.2px rgba(0, 0, 0, 0.034),
+      0 0 5.3px rgba(0, 0, 0, 0.048),
+      0 0 10px rgba(0, 0, 0, 0.06),
+      0 0 17.9px rgba(0, 0, 0, 0.072),
+      0 0 33.4px rgba(0, 0, 0, 0.086),
+      0 0 80px rgba(0, 0, 0, 0.12);
   }
 `
 
