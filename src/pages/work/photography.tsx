@@ -6,7 +6,7 @@ export const Head = () => {
   return <SEO title="Photography" />
 }
 
-const About: React.FC<PageProps> = ({ location }: PageProps) => {
+const Photography: React.FC<PageProps> = ({ location }: PageProps) => {
   return (
     <Layout pathname={location.pathname}>
       <PhotographySection />
@@ -14,4 +14,4 @@ const About: React.FC<PageProps> = ({ location }: PageProps) => {
   )
 }
 
-export default About
+export default Photography

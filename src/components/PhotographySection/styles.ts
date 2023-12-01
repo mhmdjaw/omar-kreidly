@@ -15,9 +15,11 @@ export const PhotographySectionContainer = styled(motion(Flex))<PhotographySecti
   & > div {
     position: relative;
     flex-grow: 1;
+    flex-basis: 0;
     align-items: stretch;
     & > div {
       flex-grow: 1;
+      flex-basis: 0;
       position: relative;
       justify-content: center;
       overflow: hidden;

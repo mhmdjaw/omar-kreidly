@@ -7,7 +7,7 @@ const transition = {
 }
 
 const variants = {
-  overlay: {
+  block: {
     hidden: {
       height: 0
     },

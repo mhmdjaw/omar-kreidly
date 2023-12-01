@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Overlay, SectionTitle, WorkContainer } from './styles'
+import { Block, SectionTitle, WorkContainer } from './styles'
 import variants from './variants'
 import { Flex } from '@src/styles/global-styles'
 import { motion, useAnimation } from 'framer-motion'
@@ -16,8 +16,8 @@ const WorkSection: React.FC = () => {
 
   return (
     <WorkContainer initial="hidden" animate="visible">
-      <Overlay
-        variants={variants.overlay}
+      <Block
+        variants={variants.block}
         onAnimationComplete={startTitleAnimation}
         onMouseOver={() => {
           titleAnimationComplete && setInverted(false)
@@ -38,14 +38,15 @@ const WorkSection: React.FC = () => {
             </motion.div>
           </SectionTitle>
         </Flex>
-      </Overlay>
-      <Overlay
-        variants={variants.overlay}
+      </Block>
+      <Block
+        variants={variants.block}
         onMouseMove={() => {
           titleAnimationComplete && setInverted(true)
         }}
         invert={inverted}
         addTransition={titleAnimationComplete}
+        onClick={() => navigate('/work/design')}
       >
         <Flex>
           <SectionTitle>
@@ -54,7 +55,7 @@ const WorkSection: React.FC = () => {
             </motion.div>
           </SectionTitle>
         </Flex>
-      </Overlay>
+      </Block>
     </WorkContainer>
   )
 }

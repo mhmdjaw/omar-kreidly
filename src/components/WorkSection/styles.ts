@@ -8,12 +8,12 @@ export const WorkContainer = styled(motion.div)`
   height: calc(var(--vh, 1vh) * 100);
 `
 
-interface OverlayProps {
+interface BlockProps {
   invert: boolean
   addTransition: boolean
 }
 
-export const Overlay = styled(motion.div)<OverlayProps>`
+export const Block = styled(motion.div)<BlockProps>`
   position: absolute;
   height: calc(var(--vh, 1vh) * 100);
   width: 50vw;
