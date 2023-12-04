@@ -5,20 +5,25 @@ interface CursorProps {
   hidden: boolean
 }
 
-export const Cursor = styled.div<CursorProps>`
+export const CursorContainer = styled.div`
   display: none;
   position: fixed;
-  top: 400px;
-  left: 400px;
+  top: 0;
+  left: 0;
+  mix-blend-mode: difference;
   fill: #fff;
+  pointer-events: none;
+  z-index: 999;
+  transition: transform 0.06s ease-out;
+`
+
+export const Cursor = styled.div<CursorProps>`
+  display: flex;
   width: 25px;
   mix-blend-mode: difference;
   transform: translate(-50%, -50%) rotateY(0) scale(1);
-  transition:
-    all 0.06s ease-out,
-    transform 0.4s ease-out;
+  transition: transform 0.4s ease-out;
   pointer-events: none;
-  z-index: 999;
   ${({ hovered }) =>
     hovered &&
     css`

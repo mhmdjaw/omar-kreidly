@@ -11,6 +11,7 @@ import { PrimaryLogo } from '@src/assets/svg'
 interface HeaderProps {
   onAnimationComplete?: () => void
   pathname: string
+  delay?: boolean
 }
 
 const navItems = [
@@ -24,7 +25,7 @@ const navItems = [
   }
 ]
 
-const Header: React.FC<HeaderProps> = ({ onAnimationComplete, pathname }: HeaderProps) => {
+const Header: React.FC<HeaderProps> = ({ onAnimationComplete, pathname, delay }: HeaderProps) => {
   const { headerControls } = useHeader(onAnimationComplete)
   const isMobile = useMediaQuery({ maxWidth: theme.breakpoints.sm })
   const { onCursor } = useGlobalContext()
@@ -33,7 +34,7 @@ const Header: React.FC<HeaderProps> = ({ onAnimationComplete, pathname }: Header
     <HeaderNav
       initial={{ y: isMobile ? -40 : -72, opacity: 0 }}
       animate={headerControls}
-      transition={{ duration: 1, ease: ease.slideIn }}
+      transition={{ duration: 1, ease: ease.slideIn, delay: delay ? 2.2 : 0 }}
     >
       <Container fluid>
         <Flex spaceBetween noHeight>

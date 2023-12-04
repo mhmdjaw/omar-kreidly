@@ -39,18 +39,18 @@ const GlobalStyle = createGlobalStyle`
     color: ${(props) => props.theme.text}
   }
 
-  body::-webkit-scrollbar {
-    display: none;
+  *::-webkit-scrollbar {
+    display: none !important;
   }
 
-  body {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  * {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important  ;
   }
 
-  main {
+  /* main {
     height: calc(var(--vh, 1vh) * 100);
-  }
+  } */
 `
 
 export default GlobalStyle

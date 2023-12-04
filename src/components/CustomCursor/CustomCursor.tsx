@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { Cursor } from './styles'
+import { Cursor, CursorContainer } from './styles'
 import { isBrowser } from '@src/helpers'
 import { SecondaryLogo } from '@src/assets/svg'
 import { useGlobalContext } from '@src/context'
@@ -12,10 +12,10 @@ const CustomCursor: React.FC = () => {
   useEffect(() => {
     const onMouseMove = (event: MouseEvent) => {
       const cursor = cursorRef.current as HTMLDivElement
-      cursor.style.display = 'block'
+      cursor.style.display = 'flex'
       const { clientX, clientY } = event
-      cursor.style.left = `${clientX}px`
-      cursor.style.top = `${clientY}px`
+      // matrix is way faster than other options
+      cursor.style.transform = `matrix(1, 0, 0, 1, ${clientX}, ${clientY})`
     }
 
     if (isBrowser) {
@@ -42,9 +42,11 @@ const CustomCursor: React.FC = () => {
   }, [])
 
   return (
-    <Cursor hovered={cursorType === 'hovered'} hidden={cursorType === 'hidden'} ref={cursorRef}>
-      <SecondaryLogo />
-    </Cursor>
+    <CursorContainer ref={cursorRef}>
+      <Cursor hovered={cursorType === 'hovered'} hidden={cursorType === 'hidden'}>
+        <SecondaryLogo />
+      </Cursor>
+    </CursorContainer>
   )
 }
 

@@ -1,7 +1,7 @@
 import { Flex } from '@src/styles/global-styles'
 import theme from '@src/theme'
 import { motion } from 'framer-motion'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 
 export const HeroContainer = styled.div`
   height: calc(var(--vh, 1vh) * 100);
@@ -77,7 +77,7 @@ export const Title = styled.h1`
         position: absolute;
         left: 0;
         top: 0;
-        background: linear-gradient(to right, #fff 50%, #000 120%);
+        background: linear-gradient(to right, #fff 50%, #000 135%);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -85,88 +85,3 @@ export const Title = styled.h1`
     }
   }
 `
-
-// const scrollAnimation = keyframes`
-//   0% {
-//     opacity: 0;
-//   }
-//   50% {
-//     opacity: 1;
-//   }
-//   100% {
-//     opacity: 0;
-//   }
-// `
-
-// export const ScrollIndicator = styled.div`
-//   position: relative;
-//   ${theme.breakpoints.down('md')} {
-//     transform: scale(0.6);
-//   }
-//   & span {
-//     position: absolute;
-//     top: 0;
-//     width: 24px;
-//     height: 24px;
-//     border-left: 1px solid #fff;
-//     border-bottom: 1px solid #fff;
-//     transform: rotate(-45deg) translate(150%, -150%);
-//     animation: ${scrollAnimation} 2s infinite;
-//     opacity: 0;
-//     &:nth-of-type(1) {
-//       animation-delay: 0s;
-//     }
-//     &:nth-of-type(2) {
-//       top: 16px;
-//       animation-delay: 0.15ss;
-//     }
-//     &:nth-of-type(3) {
-//       top: 32px;
-//       animation-delay: 0.3s;
-//     }
-//   }
-// `
-
-// export const ScrollIndicatorContainer = styled(Flex)`
-//   flex-basis: 50%;
-// `
-
-// const scrollAnimation = keyframes`
-//   0% {
-//     transform: translate(0, 0);
-//     opacity: 0;
-//   }
-//   40% {
-//     opacity: 1;
-//   }
-//   80% {
-//     transform: translate(0, 20px);
-//     opacity: 0;
-//   }
-//   100% {
-//     opacity: 0;
-//   }
-// `;
-
-// export const ScrollIndicator = styled.span`
-//   position: relative;
-//   width: 30px;
-//   height: 50px;
-//   border: 2px solid;
-//   border-radius: 50px;
-//   &::before {
-//     position: absolute;
-//     top: 8px;
-//     left: 50%;
-//     content: "";
-//     width: 10px;
-//     height: 10px;
-//     margin-left: -5px;
-//     background-color: currentColor;
-//     border-radius: 100%;
-//     animation: ${scrollAnimation} 2s infinite;
-//   }
-//   ${theme.breakpoints.down("md")} {
-//     transform: scale(0.6);
-//   }
-// `;

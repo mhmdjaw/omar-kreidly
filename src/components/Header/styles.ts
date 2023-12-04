@@ -14,6 +14,7 @@ export const HeaderNav = styled(motion.div)`
   ${theme.breakpoints.up('sm')} {
     top: 72px;
   }
+  mix-blend-mode: difference;
 `
 
 export const Logo = styled(Link)`
