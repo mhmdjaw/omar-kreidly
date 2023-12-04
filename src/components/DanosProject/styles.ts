@@ -10,6 +10,7 @@ export const PageContent = styled(motion.div)`
 `
 
 export const ImgContainer = styled(motion.div)`
+  display: flex;
   padding-top: 200px;
   position: relative;
   /* display: flex; */
