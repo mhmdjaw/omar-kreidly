@@ -48,9 +48,9 @@ const GlobalStyle = createGlobalStyle`
     scrollbar-width: none !important  ;
   }
 
-  /* main {
+  main {
     height: calc(var(--vh, 1vh) * 100);
-  } */
+  }
 `
 
 export default GlobalStyle
