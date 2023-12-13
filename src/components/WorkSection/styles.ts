@@ -10,18 +10,15 @@ export const WorkContainer = styled(motion.div)`
 
 interface BlockProps {
   invert: boolean
-  addTransition: boolean
 }
 
 export const Block = styled(motion.div)<BlockProps>`
   position: absolute;
   height: calc(var(--vh, 1vh) * 100);
   width: 50vw;
-  ${({ addTransition }) =>
-    addTransition &&
-    css`
-      transition: background-color, color, 0.3s;
-    `}
+  transition:
+    background-color 0.3s,
+    color 0.3s;
   &:first-child {
     background-color: ${(props) => props.theme.background};
     color: ${(props) => props.theme.text};

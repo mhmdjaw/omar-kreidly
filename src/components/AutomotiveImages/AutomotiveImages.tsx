@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import Loading from '../Loading'
 import { useMenuAnimation } from '@src/helpers'
 import { motion, useAnimationControls } from 'framer-motion'
-import { Block } from './styles'
 import variants from './variants'
+import { ImageBlock } from '@src/styles/global-styles'
 
 //images
 import automotive1 from '@src/assets/images/automotives/automotive1.jpeg'
@@ -28,28 +28,28 @@ const AutomotiveImages: React.FC = () => {
   return menuAnimationComplete ? (
     <>
       <motion.div initial="hidden" animate={animationControls} variants={variants.container}>
-        <Block>
+        <ImageBlock>
           <img src={automotive1} onLoad={() => setImagesLoading((s) => s - 1)} />
-        </Block>
-        <Block>
+        </ImageBlock>
+        <ImageBlock>
           <img src={automotive2} onLoad={() => setImagesLoading((s) => s - 1)} />
-        </Block>
-        <Block>
+        </ImageBlock>
+        <ImageBlock>
           <img src={automotive3} onLoad={() => setImagesLoading((s) => s - 1)} />
-        </Block>
-        <Block>
+        </ImageBlock>
+        <ImageBlock>
           <img src={automotive4} onLoad={() => setImagesLoading((s) => s - 1)} />
-        </Block>
-        <Block>
+        </ImageBlock>
+        <ImageBlock>
           <img src={automotive5} onLoad={() => setImagesLoading((s) => s - 1)} />
           <img src={automotive6} onLoad={() => setImagesLoading((s) => s - 1)} />
-        </Block>
-        <Block>
+        </ImageBlock>
+        <ImageBlock>
           <img src={automotive7} onLoad={() => setImagesLoading((s) => s - 1)} />
-        </Block>
-        <Block>
+        </ImageBlock>
+        <ImageBlock>
           <img src={automotive8} onLoad={() => setImagesLoading((s) => s - 1)} />
-        </Block>
+        </ImageBlock>
       </motion.div>
       {imagesLoading > 0 && <Loading />}
     </>

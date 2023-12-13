@@ -16,6 +16,8 @@ export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({ element }) =
 }
 
 export const shouldUpdateScroll = ({ routerProps: { location }, getSavedScrollPosition }) => {
+  // tell the browser we're handling scroll position restoration manually
+  window.history.scrollRestoration = 'manual'
   // transition duration from `PageTransition`
   const TRANSITION_DELAY = 1500
   // if it's a "normal" route
@@ -24,7 +26,7 @@ export const shouldUpdateScroll = ({ routerProps: { location }, getSavedScrollPo
   }
   // if we used the browser's forwards or back button
   else {
-    const savedPosition = getSavedScrollPosition(location) || [0, 0]
+    const savedPosition = getSavedScrollPosition(location, location.key) || [0, 0]
     window.setTimeout(() => window.scrollTo(...savedPosition), TRANSITION_DELAY)
   }
   return false

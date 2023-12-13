@@ -1,13 +1,9 @@
 import { Flex } from '@src/styles/global-styles'
 import theme from '@src/theme'
 import { motion } from 'framer-motion'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
-interface PhotographySectionContainerProps {
-  animationComplete: boolean
-}
-
-export const PhotographySectionContainer = styled(motion(Flex))<PhotographySectionContainerProps>`
+export const PhotographySectionContainer = styled(motion(Flex))`
   height: calc(var(--vh, 1vh) * 100);
   position: relative;
   overflow: hidden;
@@ -33,12 +29,9 @@ export const PhotographySectionContainer = styled(motion(Flex))<PhotographySecti
         height: 100%;
         object-fit: cover;
         object-position: center top;
-        filter: opacity(55%);
-        ${({ animationComplete }) =>
-          animationComplete &&
-          css`
-            transition: all 0.3s;
-          `}
+        /* filter: opacity(55%); */
+        opacity: 0.55;
+        transition: opacity 0.3s;
       }
       & .overlay {
         position: absolute;
@@ -50,11 +43,7 @@ export const PhotographySectionContainer = styled(motion(Flex))<PhotographySecti
         justify-content: center;
         align-items: center;
         background-color: rgba(255, 255, 255, 0.17);
-        ${({ animationComplete }) =>
-          animationComplete &&
-          css`
-            transition: all 0.3s;
-          `}
+        transition: opacity 0.3s;
         & h1 {
           font-weight: 400;
           font-size: 2rem;
@@ -71,7 +60,7 @@ export const PhotographySectionContainer = styled(motion(Flex))<PhotographySecti
       @media (hover: hover) and (pointer: fine) {
         &:hover {
           & img {
-            filter: opacity(100%);
+            opacity: 1;
           }
           & .overlay {
             opacity: 0;
@@ -82,7 +71,7 @@ export const PhotographySectionContainer = styled(motion(Flex))<PhotographySecti
       @media (hover: none) {
         &:active {
           & img {
-            filter: opacity(100%);
+            opacity: 1;
           }
           & .overlay {
             opacity: 0;

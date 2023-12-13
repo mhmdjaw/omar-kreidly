@@ -7,6 +7,7 @@ import { navigate } from 'gatsby'
 import { DanosLogo, LunaLogo, PCHuntLogo } from '@src/assets/svg'
 import { useMediaQuery } from 'react-responsive'
 import theme from '@src/theme'
+import { g_variants } from '@src/helpers'
 
 const DesignSection: React.FC = () => {
   const svgControls = useAnimation()
@@ -20,20 +21,15 @@ const DesignSection: React.FC = () => {
 
   return (
     <DesignContainer initial="hidden" animate="visible" column={isMobile} addBlur={svgAnimationComplete}>
-      <Flex onClick={() => navigate('/work/design/danos')}>
+      <Flex onClick={() => svgAnimationComplete && navigate('/work/design/danos')}>
         <Block className="first" variants={variants.block} onAnimationComplete={startSVGAnimation} />
         <LogoContainer initial="hidden" animate={svgControls}>
-          <DanosLogo width="100%" variants={variants.pathVariants} motionStyle={{ stroke: theme.text }} />
+          <DanosLogo width="100%" variants={g_variants.pathVariants} motionStyle={{ stroke: theme.text }} />
         </LogoContainer>
       </Flex>
       <Flex>
-        <Block
-          className="middle"
-          variants={variants.block}
-          // onClick={() => navigate('/work/photography')}
-        />
         <LogoContainer className="luna" initial="hidden" animate={svgControls}>
-          <LunaLogo width="100%" variants={variants.pathVariants} motionStyle={{ stroke: theme.text }} />
+          <LunaLogo width="100%" variants={g_variants.pathVariants} motionStyle={{ stroke: theme.text }} />
         </LogoContainer>
       </Flex>
       <Flex>
@@ -50,7 +46,7 @@ const DesignSection: React.FC = () => {
         >
           <PCHuntLogo
             width="100%"
-            variants={variants.pathVariants}
+            variants={g_variants.pathVariants}
             motionStyle={{ stroke: '#ffea00', strokeWidth: 4 }}
           />
         </LogoContainer>

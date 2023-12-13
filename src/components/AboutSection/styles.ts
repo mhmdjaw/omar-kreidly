@@ -1,4 +1,4 @@
-import { Container, Flex } from '@src/styles/global-styles'
+import { Flex } from '@src/styles/global-styles'
 import theme from '@src/theme'
 import { motion } from 'framer-motion'
 import styled, { css } from 'styled-components'
@@ -18,16 +18,6 @@ export const AboutContent = styled(motion(Flex))`
   ${theme.breakpoints.down('sm')} {
     top: calc(var(--vh, 1vh) * 15);
   }
-`
-export const AboutText = styled(Container)`
-  flex-grow: 0;
-  height: auto;
-`
-
-export const Footer = styled(Container)`
-  flex-grow: 0;
-  height: auto;
-  width: 100%;
 `
 
 export const Text = styled.h2`
@@ -75,32 +65,96 @@ export const CoppyContainer = styled.div<CoppyContainerProps>`
     `}
 `
 
-export const CopyButton = styled.button`
-  background-color: ${(props) => props.theme.text};
-  color: ${(props) => props.theme.background};
-  border: none;
-  border-radius: 50%;
-  padding: 10px;
-  min-height: 110px;
-  width: 110px;
+// export const CopyButton = styled.button`
+//   background-color: ${(props) => props.theme.text};
+//   color: ${(props) => props.theme.background};
+//   border: none;
+//   border-radius: 50%;
+//   padding: 10px;
+//   min-height: 110px;
+//   width: 110px;
+//   font-weight: 600;
+//   font-size: 0.9rem;
+//   backface-visibility: hidden;
+//   ${theme.breakpoints.down('sm')} {
+//     padding: 10px;
+//     min-height: 90px;
+//     width: 90px;
+//     font-size: 0.7rem;
+//   }
+//   & > div {
+//     justify-content: center;
+//   }
+//   &:last-child {
+//     top: 0;
+//     left: 0;
+//     position: absolute;
+//     transform: rotateY(180deg);
+//   }
+// `
+
+interface CopyButtonProps {
+  fill?: boolean
+  isSafari?: boolean
+}
+
+export const CopyButton = styled.button<CopyButtonProps>`
+  position: relative;
+  border: 0;
+  border-radius: 99px 0 99px 0;
+  box-shadow: 0 0 0 4px inset;
+  background-color: transparent;
+  color: ${(props) => props.theme.text};
+  padding: 0;
+  min-height: 76px;
+  width: 186px;
   font-weight: 600;
-  font-size: 0.9rem;
-  backface-visibility: hidden;
-  ${theme.breakpoints.down('sm')} {
-    padding: 10px;
-    min-height: 90px;
-    width: 90px;
-    font-size: 0.7rem;
-  }
+  font-size: 1rem;
+  overflow: hidden;
+  transition: all 0.4s ease-out;
   & > div {
-    justify-content: center;
-  }
-  &:last-child {
-    top: 0;
-    left: 0;
     position: absolute;
-    transform: rotateY(180deg);
+    display: flex;
+    border-radius: 99px 0 99px 0;
+    background-color: ${(props) => props.theme.text};
+    color: ${(props) => props.theme.background};
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    overflow: hidden;
+    transition: width 0.7s;
+    ${({ fill }) =>
+      fill &&
+      css`
+        width: 100%;
+      `}
+    & > .text {
+      min-width: 186px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.4s ease-out;
+    }
   }
+  & p {
+    margin: 0;
+    display: inline-block;
+  }
+  ${({ isSafari }) =>
+    !isSafari &&
+    css`
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          min-height: 82px;
+          width: 200px;
+          & .text {
+            min-width: 200px;
+          }
+        }
+      }
+    `}
 `
 
 export const IconsContainer = styled(Flex)`
@@ -112,10 +166,16 @@ export const IconsContainer = styled(Flex)`
     & > a {
       display: inline-block;
       height: 100%;
+      transition: transform 0.15s;
       &:not(:first-of-type) {
         margin-left: 32px;
         ${theme.breakpoints.down('md')} {
           margin-left: 16px;
+        }
+      }
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          transform: scale(1.1);
         }
       }
     }

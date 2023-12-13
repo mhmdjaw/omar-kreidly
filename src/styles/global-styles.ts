@@ -1,9 +1,13 @@
 import theme from '@src/theme'
+import { motion } from 'framer-motion'
 import styled, { css } from 'styled-components'
 
 interface ContainerProps {
   fluid?: boolean
   disableFlexGrow?: boolean
+  fullWidth?: boolean
+  mt?: boolean
+  mb?: boolean
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -11,7 +15,6 @@ export const Container = styled.div<ContainerProps>`
   padding: 0 32px;
   position: relative;
   width: auto;
-  height: 100%;
   ${theme.breakpoints.up('sm')} {
     padding: 0 65px;
   }
@@ -34,6 +37,30 @@ export const Container = styled.div<ContainerProps>`
     disableFlexGrow &&
     css`
       flex-grow: 0;
+    `}
+
+  ${({ fullWidth }) =>
+    fullWidth &&
+    css`
+      width: 100%;
+    `}
+
+  ${({ mt }) =>
+    mt &&
+    css`
+      margin-top: 200px;
+      ${theme.breakpoints.down('sm')} {
+        margin-top: 100px;
+      }
+    `}
+
+    ${({ mb }) =>
+    mb &&
+    css`
+      margin-bottom: 200px;
+      ${theme.breakpoints.down('sm')} {
+        margin-bottom: 100px;
+      }
     `}
 `
 
@@ -79,4 +106,69 @@ export const Flex = styled.div<FlexProps>`
     css`
       height: 0;
     `}
+`
+
+export const ImageBlock = styled.div`
+  position: relative;
+  display: flex;
+  width: 100vw;
+  overflow: hidden;
+  & img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+    flex-grow: 1;
+    overflow: hidden;
+  }
+`
+
+export const ProjectContent = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 1920px;
+`
+
+export const SectionTitle = styled(motion.h2)`
+  display: inline-block;
+  font-size: 3rem;
+  margin-top: 0;
+  margin-bottom: 100px;
+  ${theme.breakpoints.down('sm')} {
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+  }
+`
+
+export const AboutText = styled(motion.h3)`
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.7;
+  font-size: 1.7rem;
+  text-align: justify;
+  ${theme.breakpoints.down('lg')} {
+    font-size: 1.3rem;
+  }
+  ${theme.breakpoints.down('md')} {
+    font-size: 1.1rem;
+  }
+  ${theme.breakpoints.down('sm')} {
+    font-size: 1rem;
+  }
+`
+
+export const Wireframes = styled(motion(Flex))`
+  &.first {
+    margin-bottom: 200px;
+    ${theme.breakpoints.down('sm')} {
+      margin-bottom: 100px;
+    }
+  }
+  & > div {
+    display: flex;
+    flex-grow: 1;
+    &:first-child {
+      margin-right: 20%;
+    }
+  }
 `

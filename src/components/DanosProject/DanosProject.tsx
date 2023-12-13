@@ -1,48 +1,122 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { ImgContainer, PageContainer, PageContent } from './styles'
-import { DanosLogo } from '@src/assets/svg'
+import { ImgContainer, MobileMockups, MockupSection, ProjectContainer } from './styles'
+import { DanosLogo, PCHuntLogo } from '@src/assets/svg'
 import ProjectHero from '../ProjectHero'
-import { useMotionValueEvent, useScroll, useSpring, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { StaticImage } from 'gatsby-plugin-image'
+import { g_variants } from '@src/helpers'
+import { useMediaQuery } from 'react-responsive'
+import theme from '@src/theme'
+import { AboutText, Container, ProjectContent, SectionTitle, Wireframes } from '@src/styles/global-styles'
+import Separator from '../Seperator/Separator'
+import variants from './variants'
+import Colors from '../Colors'
+import Footer from '../Footer'
 
-// imagesmotion
-import danos1 from '@src/assets/images/danos/danos1.png'
+const imagesPath = '../../assets/images/danos'
 
 const DanosProject: React.FC = () => {
+  // first image
   const [containerHeight, setContainerHeight] = useState<number | undefined>(undefined)
-  const [HeroAnimationComplete, setHeroAnimationComplete] = useState(false)
   const container = useRef<HTMLDivElement | null>(null)
-  const { scrollYProgress } = useScroll({
+  const { scrollYProgress: scrollYProgress1 } = useScroll({
     target: container,
     offset: ['start end', 'start start']
   })
-  const smoothProgress = useSpring(scrollYProgress, { mass: 0.1, damping: 8 })
+
+  const y = useTransform(scrollYProgress1, [0, 1], [-((containerHeight || 0) - 0.1 * (containerHeight || 0)), 0])
+
+  // last image
+  const [container2Height, setContainer2Height] = useState<number | undefined>(undefined)
+  const container2 = useRef<HTMLDivElement | null>(null)
+  const { scrollYProgress: scrollYProgress2 } = useScroll({
+    target: container2,
+    offset: ['start start', 'end start']
+  })
+
+  const y2 = useTransform(scrollYProgress2, [-0.1, 1], [0, container2Height || 0])
 
   useEffect(() => {
-    if (!container.current) return
+    if (!(container.current && container2.current)) return
     const resizeObserver = new ResizeObserver(() => {
       setContainerHeight(container.current?.clientHeight)
+      setContainer2Height(container2.current?.clientHeight)
     })
     resizeObserver.observe(container.current)
     return () => resizeObserver.disconnect() // clean up
   }, [container])
 
-  const y = useTransform(smoothProgress, [0, 1], [-((containerHeight || 0) - 0.1 * (containerHeight || 0)), 0])
+  const isMobile = useMediaQuery({ maxWidth: theme.breakpoints.sm })
 
-  useMotionValueEvent(y, 'change', (latest) => {
-    console.log(latest)
-  })
+  const i = isMobile ? 1 : 2
 
   return (
-    <PageContainer id="fixed-target">
-      <ProjectHero logo={DanosLogo} onAnimationComplete={() => setHeroAnimationComplete(true)} />
-      {/* {HeroAnimationComplete && ( */}
-      <PageContent ref={container} style={{ y }}>
-        <ImgContainer>
-          <img src={danos1} alt="" />
+    <ProjectContainer id="fixed-target">
+      <ProjectHero logo={DanosLogo} />
+      <ProjectContent style={{ y }}>
+        <ImgContainer ref={container}>
+          <StaticImage src={`${imagesPath}/danos1.png`} alt="danos_1" />
         </ImgContainer>
-      </PageContent>
-      {/* )} */}
-    </PageContainer>
+        <MockupSection>
+          <MobileMockups {...variants.mobileMockups}>
+            <motion.div custom={i} variants={variants.mobile}>
+              <StaticImage class="img" src={`${imagesPath}/danos2.png`} alt="danos_2" />
+            </motion.div>
+            <motion.div custom={i} variants={variants.mobile}>
+              <StaticImage class="img" src={`${imagesPath}/danos3.png`} alt="danos_3" />
+            </motion.div>
+          </MobileMockups>
+          <MobileMockups {...variants.mobileMockups}>
+            <motion.div custom={i} variants={variants.mobile}>
+              <StaticImage class="img" src={`${imagesPath}/danos4.png`} alt="danos_4" />
+            </motion.div>
+            <motion.div custom={i} variants={variants.mobile}>
+              <StaticImage class="img" src={`${imagesPath}/danos5.png`} alt="danos_5" />
+            </motion.div>
+          </MobileMockups>
+          <motion.div ref={container2} style={{ y: y2 }} className="bottom">
+            <motion.div
+              variants={variants.handsMobile}
+              initial="hidden"
+              whileInView="inView"
+              viewport={{ once: true, amount: 0 }}
+            >
+              <StaticImage src={`${imagesPath}/danos6.png`} alt="danos_6" />
+            </motion.div>
+          </motion.div>
+        </MockupSection>
+        <Container mt mb fullWidth>
+          <SectionTitle {...g_variants.text}>About</SectionTitle>
+          <AboutText {...g_variants.text}>
+            <strong>Danos</strong> is a revolutionary app that brings the best of two culinary worlds together in one
+            place. Whether you&#8217;re craving a fine dining experience at a restaurant or the comfort of your favorite
+            cuisine delivered to your doorstep, Danos has you covered.
+          </AboutText>
+          <Separator />
+          <SectionTitle {...g_variants.text}>Colors</SectionTitle>
+          <Colors colors={['2998FF', 'FFFFFF', 'FF8A00', '343434', '8D8D8D']} />
+          <Separator />
+          <SectionTitle {...g_variants.text}>Wireframes</SectionTitle>
+          <Wireframes className="first" {...variants.mobileMockups}>
+            <motion.div custom={i} variants={variants.mobile}>
+              <StaticImage class="img" src={`${imagesPath}/danos7.png`} alt="danos_7" />
+            </motion.div>
+            <motion.div custom={i} variants={variants.mobile}>
+              <StaticImage class="img" src={`${imagesPath}/danos8.png`} alt="danos_8" />
+            </motion.div>
+          </Wireframes>
+          <Wireframes {...variants.mobileMockups}>
+            <motion.div custom={i} variants={variants.mobile}>
+              <StaticImage class="img" src={`${imagesPath}/danos9.png`} alt="danos_9" />
+            </motion.div>
+            <motion.div custom={i} variants={variants.mobile}>
+              <StaticImage class="img" src={`${imagesPath}/danos10.png`} alt="danos_10" />
+            </motion.div>
+          </Wireframes>
+        </Container>
+      </ProjectContent>
+      <Footer logo={PCHuntLogo} />
+    </ProjectContainer>
   )
 }
 

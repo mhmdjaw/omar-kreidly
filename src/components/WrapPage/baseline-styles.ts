@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     font-size: 1rem;
     color: ${(props) => props.theme.text};
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
   }
 
   body {
@@ -48,9 +48,9 @@ const GlobalStyle = createGlobalStyle`
     scrollbar-width: none !important  ;
   }
 
-  main {
+  /* main {
     height: calc(var(--vh, 1vh) * 100);
-  }
+  } */
 `
 
 export default GlobalStyle

@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import Loading from '../Loading'
 import { useMenuAnimation } from '@src/helpers'
 import { motion, useAnimationControls } from 'framer-motion'
-import { Block } from './styles'
 import variants from './variants'
+import { ImageBlock } from '@src/styles/global-styles'
 
 //images
 import portrait1 from '@src/assets/images/portraits/portrait1.jpg'
@@ -27,23 +27,23 @@ const PortraitImages: React.FC = () => {
   return menuAnimationComplete ? (
     <>
       <motion.div initial="hidden" animate={animationControls} variants={variants.container}>
-        <Block>
+        <ImageBlock>
           <img src={portrait1} onLoad={() => setImagesLoading((s) => s - 1)} />
-        </Block>
-        <Block>
+        </ImageBlock>
+        <ImageBlock>
           <img src={portrait2} onLoad={() => setImagesLoading((s) => s - 1)} />
           <img src={portrait3} onLoad={() => setImagesLoading((s) => s - 1)} />
-        </Block>
-        <Block>
+        </ImageBlock>
+        <ImageBlock>
           <img src={portrait4} onLoad={() => setImagesLoading((s) => s - 1)} />
-        </Block>
-        <Block>
+        </ImageBlock>
+        <ImageBlock>
           <img src={portrait5} onLoad={() => setImagesLoading((s) => s - 1)} />
           <img src={portrait6} onLoad={() => setImagesLoading((s) => s - 1)} />
-        </Block>
-        <Block>
+        </ImageBlock>
+        <ImageBlock>
           <img src={portrait7} onLoad={() => setImagesLoading((s) => s - 1)} />
-        </Block>
+        </ImageBlock>
       </motion.div>
       {imagesLoading > 0 && <Loading />}
     </>

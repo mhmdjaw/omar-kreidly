@@ -16,7 +16,6 @@ import Loading from '../Loading'
 const PhotographySection: React.FC = () => {
   const animationControls = useAnimationControls()
   const [imagesLoading, setImagesLoading] = useState(4)
-  const [animationComplete, setAnimationComplete] = useState(false)
   const { menuAnimationComplete } = useMenuAnimation()
 
   const isMobile = useMediaQuery({ maxWidth: theme.breakpoints.md })
@@ -32,7 +31,6 @@ const PhotographySection: React.FC = () => {
         initial="hidden"
         animate={animationControls}
         variants={variants.container}
-        animationComplete={animationComplete}
         column={isMobile}
       >
         <Flex>
@@ -64,11 +62,7 @@ const PhotographySection: React.FC = () => {
             <div className="overlay">
               <h1>Automotive</h1>
             </div>
-            <motion.div
-              className="cover"
-              variants={variants.cover}
-              onAnimationComplete={() => setAnimationComplete(true)}
-            />
+            <motion.div className="cover" variants={variants.cover} />
           </Flex>
         </Flex>
       </PhotographySectionContainer>

@@ -22,7 +22,7 @@ export const DesignContainer = styled(motion(Flex))<DesignContainerProps>`
     ${({ addBlur }) =>
       addBlur &&
       css`
-        filter: blur(4px);
+        filter: blur(5px);
         transition: all 0.3s;
         @media (hover: hover) and (pointer: fine) {
           &:hover {
@@ -44,7 +44,7 @@ export const Block = styled(motion.div)`
   width: 100%;
   top: 0;
   &.first {
-    background-color: #2998ff;
+    background-color: #0372d9;
     left: 0;
   }
   &.middle {

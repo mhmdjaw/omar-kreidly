@@ -28,7 +28,7 @@ const config: GatsbyConfig = {
         icon: 'src/assets/images/favicon.svg'
       }
     },
-    'gatsby-plugin-sharp',
+    // 'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-source-filesystem',
@@ -37,6 +37,15 @@ const config: GatsbyConfig = {
         path: './src/assets/'
       },
       __key: 'images'
+    },
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        // Defaults used for gatsbyImageData and StaticImage
+        defaults: { formats: ['auto'], placeholder: `blurred` },
+        // Relates to "options.failOn" in https://sharp.pixelplumbing.com/api-constructor#parameters
+        failOn: `warning`
+      }
     }
   ]
 }

@@ -13,7 +13,6 @@ import useHero from './Hero.State'
 import { motion } from 'framer-motion'
 import ReactTextTransition from 'react-text-transition'
 import { ease } from '@src/helpers'
-import { StaticImage } from 'gatsby-plugin-image'
 import variants from './variants'
 
 interface HeroProps {
@@ -21,13 +20,13 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ headerAnimationComplete }: HeroProps) => {
-  const { showIndicator, titleControls, coverControls, headlines, index, imageLoaded, setImageLoaded } =
+  const { titleControls, coverControls, headlines, index, imageLoaded, setImageLoaded } =
     useHero(headerAnimationComplete)
 
   return (
     <HeroContainer>
       <HeroImage src={heroImage} alt="omar-kreidly-hero-image" onLoad={() => setImageLoaded(true)} />
-      <ImageCover variants={variants.cover} initial="hidden" animate={coverControls} />
+      <ImageCover variants={variants.cover} initial="hidden" animate={coverControls} shadow={headerAnimationComplete} />
       <HeroContent column>
         <div />
         <Title>
@@ -47,16 +46,6 @@ const Hero: React.FC<HeroProps> = ({ headerAnimationComplete }: HeroProps) => {
           </motion.div>
         </Title>
         <div />
-        {/* <ScrollIndicatorContainer>
-          {showIndicator && (
-            // <ScrollIndicator />
-            <ScrollIndicator>
-              <span></span>
-              <span></span>
-              <span></span>
-            </ScrollIndicator>
-          )}
-        </ScrollIndicatorContainer> */}
       </HeroContent>
     </HeroContainer>
   )

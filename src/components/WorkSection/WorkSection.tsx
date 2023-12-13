@@ -23,8 +23,7 @@ const WorkSection: React.FC = () => {
           titleAnimationComplete && setInverted(false)
         }}
         invert={inverted}
-        addTransition={titleAnimationComplete}
-        onClick={() => navigate('/work/photography')}
+        onClick={() => titleAnimationComplete && navigate('/work/photography')}
       >
         <Flex>
           <SectionTitle>
@@ -45,8 +44,7 @@ const WorkSection: React.FC = () => {
           titleAnimationComplete && setInverted(true)
         }}
         invert={inverted}
-        addTransition={titleAnimationComplete}
-        onClick={() => navigate('/work/design')}
+        onClick={() => titleAnimationComplete && navigate('/work/design')}
       >
         <Flex>
           <SectionTitle>

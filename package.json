@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@fontsource/montserrat": "^5.0.15",
+    "@studio-freight/lenis": "^1.0.29",
     "babel-plugin-styled-components": "^2.1.4",
     "framer-motion": "^10.16.5",
     "gatsby": "^5.12.4",

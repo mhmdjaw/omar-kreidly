@@ -1,7 +1,7 @@
 import { Flex } from '@src/styles/global-styles'
 import theme from '@src/theme'
 import { motion } from 'framer-motion'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const HeroContainer = styled.div`
   height: calc(var(--vh, 1vh) * 100);
@@ -23,13 +23,26 @@ export const HeroImage = styled.img`
   transform: translateX(7vw);
   overflow: visible;
 `
-export const ImageCover = styled(motion.div)`
+
+interface ImageCoverProps {
+  shadow?: boolean
+}
+
+export const ImageCover = styled(motion.div)<ImageCoverProps>`
+  /* mix-blend-mode: difference; */
   position: absolute;
   height: calc(var(--vh, 1vh) * 85);
   left: 0;
   right: 0;
   bottom: 0;
   background-color: ${(props) => props.theme.background};
+  transition: box-shadow 0.3s;
+  ${({ shadow }) =>
+    shadow &&
+    css`
+      box-shadow: 0 0 60px 50px #000;
+      /* box-shadow: 0 0 60px #fff; */
+    `}
 `
 
 export const HeroContent = styled(Flex)`

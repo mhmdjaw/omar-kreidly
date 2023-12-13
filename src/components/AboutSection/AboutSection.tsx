@@ -1,21 +1,10 @@
 import React, { useState } from 'react'
-import {
-  AboutContainer,
-  AboutContent,
-  AboutText,
-  CoppyContainer,
-  CopyButton,
-  Developer,
-  Footer,
-  IconsContainer,
-  Text
-} from './styles'
-import ReactTextTransition from 'react-text-transition'
+import { AboutContainer, AboutContent, CopyButton, Developer, IconsContainer, Text } from './styles'
+// import ReactTextTransition from 'react-text-transition'
 import { useGlobalContext } from '@src/context'
 import { BehanceIcon, InstagramIcon, LinkedinIcon } from '@src/assets/svg'
 import theme from '@src/theme'
-import { Flex } from '@src/styles/global-styles'
-import { isTouchDevice } from '@src/helpers'
+import { Container, Flex } from '@src/styles/global-styles'
 
 const svgIcons = [
   {
@@ -33,14 +22,16 @@ const svgIcons = [
 ]
 
 const AboutSection: React.FC = () => {
-  const [buttonText, setButtonText] = useState('Copy Email')
+  // const [buttonText, setButtonText] = useState('Copy Email')
   const [rotateButton, setRotateButton] = useState(false)
   const { onCursor } = useGlobalContext()
+
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
 
   return (
     <AboutContainer>
       <AboutContent initial={{ opacity: 0 }} animate={{ opacity: 1 }} column spaceBetween>
-        <AboutText>
+        <Container>
           <Text>
             I&#8217;m a versatile creative professional skilled in photography and UI/UX design. My work seamlessly
             combines capturing the world&#8217;s beauty through my camera lens with crafting user-centric digital
@@ -48,8 +39,8 @@ const AboutSection: React.FC = () => {
             visuals and functional interfaces. Explore my portfolio and let&#8217;s collaborate to transform your vision
             into stunning imagery and intuitive user experiences.
           </Text>
-        </AboutText>
-        <CoppyContainer
+        </Container>
+        {/* <CoppyContainer
           rotate={rotateButton}
           onClick={() => {
             setRotateButton(!rotateButton)
@@ -57,7 +48,7 @@ const AboutSection: React.FC = () => {
           }}
         >
           <div>
-            <CopyButton
+        <CopyButton
               onMouseEnter={() => {
                 setButtonText('Click Me!')
                 onCursor('hidden')
@@ -69,10 +60,27 @@ const AboutSection: React.FC = () => {
             >
               {isTouchDevice() ? 'Copy Email' : <ReactTextTransition>{buttonText}</ReactTextTransition>}
             </CopyButton>
-            <CopyButton>Email Copied!</CopyButton>
+        <CopyButton>Copy Email</CopyButton>
+        </div>
+        </CoppyContainer> */}
+        <CopyButton
+          onClick={() => {
+            setRotateButton(!rotateButton)
+            navigator.clipboard.writeText('kreidlyomar@gmail.com')
+          }}
+          onMouseEnter={() => onCursor('hidden')}
+          onMouseLeave={() => onCursor('unhovered')}
+          fill={rotateButton}
+          isSafari={isSafari}
+        >
+          <p>Copy Email</p>
+          <div>
+            <div className="text">
+              <p>Email Copied!</p>
+            </div>
           </div>
-        </CoppyContainer>
-        <Footer fluid>
+        </CopyButton>
+        <Container fluid fullWidth>
           <IconsContainer spaceBetween>
             <Developer>
               Coded by{' '}
@@ -99,7 +107,7 @@ const AboutSection: React.FC = () => {
               ))}
             </Flex>
           </IconsContainer>
-        </Footer>
+        </Container>
       </AboutContent>
     </AboutContainer>
   )

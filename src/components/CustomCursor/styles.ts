@@ -20,6 +20,7 @@ export const CursorContainer = styled.div`
 export const Cursor = styled.div<CursorProps>`
   display: flex;
   width: 25px;
+  height: 28px;
   mix-blend-mode: difference;
   transform: translate(-50%, -50%) rotateY(0) scale(1);
   transition: transform 0.4s ease-out;

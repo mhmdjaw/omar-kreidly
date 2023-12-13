@@ -4,7 +4,10 @@ import { motion } from 'framer-motion'
 import styled, { css, keyframes } from 'styled-components'
 
 export const HeroContainer = styled(motion.div)`
-  height: calc(var(--vh, 1vh) * 100);
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
   position: relative;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
@@ -27,6 +30,8 @@ export const HeroContent = styled(Flex)`
   justify-content: space-evenly;
 `
 export const HeroLogo = styled.div`
+  display: flex;
+  position: relative;
   fill: ${(props) => props.theme.text};
   ${theme.breakpoints.up('sm')} {
     width: 30%;
@@ -44,7 +49,7 @@ export const HeroLogo = styled.div`
 
 export const BlocksContainer = styled(motion(Flex))`
   position: relative;
-  height: calc(var(--vh, 1vh) * 100);
+  height: 100vh;
   overflow: hidden;
   align-items: flex-start;
   & > div {
@@ -52,7 +57,7 @@ export const BlocksContainer = styled(motion(Flex))`
     flex-grow: 1;
     flex-basis: 0;
     overflow: hidden;
-    height: calc(var(--vh, 1vh) * 100);
+    height: 100vh;
     background-color: ${(props) => props.theme.text};
   }
 `
