@@ -26,8 +26,13 @@ const Hero: React.FC<HeroProps> = ({ headerAnimationComplete }: HeroProps) => {
   return (
     <HeroContainer>
       <HeroImage src={heroImage} alt="omar-kreidly-hero-image" onLoad={() => setImageLoaded(true)} />
-      <ImageCover variants={variants.cover} initial="hidden" animate={coverControls} shadow={headerAnimationComplete} />
-      <HeroContent column>
+      <ImageCover
+        variants={variants.cover}
+        initial="hidden"
+        animate={coverControls}
+        $shadow={headerAnimationComplete}
+      />
+      <HeroContent $column>
         <div />
         <Title>
           <motion.div

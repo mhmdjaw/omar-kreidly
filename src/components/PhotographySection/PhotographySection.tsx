@@ -31,7 +31,7 @@ const PhotographySection: React.FC = () => {
         initial="hidden"
         animate={animationControls}
         variants={variants.container}
-        column={isMobile}
+        $column={isMobile}
       >
         <Flex>
           <Flex onClick={() => navigate('/work/photography/portrait')}>

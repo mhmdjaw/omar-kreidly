@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import styled, { css } from 'styled-components'
 
 interface MenuContainerProps {
-  isWorkPage: boolean
+  $isWorkPage: boolean
 }
 
 export const MenuContainer = styled.div<MenuContainerProps>`
@@ -18,8 +18,8 @@ export const MenuContainer = styled.div<MenuContainerProps>`
   ${theme.breakpoints.down('sm')} {
     top: 50px;
   }
-  ${({ isWorkPage }) =>
-    isWorkPage &&
+  ${({ $isWorkPage }) =>
+    $isWorkPage &&
     css`
       mix-blend-mode: difference;
     `}

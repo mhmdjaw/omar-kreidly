@@ -3,11 +3,11 @@ import { motion } from 'framer-motion'
 import styled, { css } from 'styled-components'
 
 interface ContainerProps {
-  fluid?: boolean
-  disableFlexGrow?: boolean
-  fullWidth?: boolean
-  mt?: boolean
-  mb?: boolean
+  $fluid?: boolean
+  $disableFlexGrow?: boolean
+  $fullWidth?: boolean
+  $mt?: boolean
+  $mb?: boolean
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -25,28 +25,28 @@ export const Container = styled.div<ContainerProps>`
     max-width: 1244px;
   }
 
-  ${({ fluid }) =>
-    fluid &&
+  ${({ $fluid }) =>
+    $fluid &&
     css`
       /* padding: 0; */
       margin: 0;
       max-width: 100% !important;
     `}
 
-  ${({ disableFlexGrow }) =>
-    disableFlexGrow &&
+  ${({ $disableFlexGrow }) =>
+    $disableFlexGrow &&
     css`
       flex-grow: 0;
     `}
 
-  ${({ fullWidth }) =>
-    fullWidth &&
+  ${({ $fullWidth }) =>
+    $fullWidth &&
     css`
       width: 100%;
     `}
 
-  ${({ mt }) =>
-    mt &&
+  ${({ $mt }) =>
+    $mt &&
     css`
       margin-top: 200px;
       ${theme.breakpoints.down('sm')} {
@@ -54,8 +54,8 @@ export const Container = styled.div<ContainerProps>`
       }
     `}
 
-    ${({ mb }) =>
-    mb &&
+    ${({ $mb }) =>
+    $mb &&
     css`
       margin-bottom: 200px;
       ${theme.breakpoints.down('sm')} {
@@ -65,11 +65,11 @@ export const Container = styled.div<ContainerProps>`
 `
 
 interface FlexProps {
-  spaceBetween?: boolean
-  alignTop?: boolean
-  flexEnd?: boolean
-  column?: boolean
-  noHeight?: boolean
+  $spaceBetween?: boolean
+  $alignTop?: boolean
+  $flexEnd?: boolean
+  $column?: boolean
+  $noHeight?: boolean
 }
 
 export const Flex = styled.div<FlexProps>`
@@ -77,32 +77,32 @@ export const Flex = styled.div<FlexProps>`
   display: flex;
   align-items: center;
 
-  ${({ spaceBetween }) =>
-    spaceBetween &&
+  ${({ $spaceBetween }) =>
+    $spaceBetween &&
     css`
       justify-content: space-between;
     `}
 
-  ${({ flexEnd }) =>
-    flexEnd &&
+  ${({ $flexEnd }) =>
+    $flexEnd &&
     css`
       justify-content: flex-end;
     `}
 
-  ${({ alignTop }) =>
-    alignTop &&
+  ${({ $alignTop }) =>
+    $alignTop &&
     css`
       align-items: flex-start;
     `}
 
-  ${({ column }) =>
-    column &&
+  ${({ $column }) =>
+    $column &&
     css`
       flex-direction: column;
     `}
 
-  ${({ noHeight }) =>
-    noHeight &&
+  ${({ $noHeight }) =>
+    $noHeight &&
     css`
       height: 0;
     `}
@@ -157,7 +157,7 @@ export const AboutText = styled(motion.h3)`
   }
 `
 
-export const Wireframes = styled(motion(Flex))`
+export const Wireframes = motion(styled(Flex)`
   &.first {
     margin-bottom: 200px;
     ${theme.breakpoints.down('sm')} {
@@ -171,4 +171,4 @@ export const Wireframes = styled(motion(Flex))`
       margin-right: 20%;
     }
   }
-`
+`)

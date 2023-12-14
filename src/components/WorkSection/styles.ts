@@ -9,7 +9,7 @@ export const WorkContainer = styled(motion.div)`
 `
 
 interface BlockProps {
-  invert: boolean
+  $invert: boolean
 }
 
 export const Block = styled(motion.div)<BlockProps>`
@@ -35,8 +35,8 @@ export const Block = styled(motion.div)<BlockProps>`
     height: 100%;
     justify-content: center;
   }
-  ${({ invert }) =>
-    invert &&
+  ${({ $invert }) =>
+    $invert &&
     css`
       &:first-child {
         background-color: ${(props) => props.theme.text};

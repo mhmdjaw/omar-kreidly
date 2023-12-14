@@ -25,7 +25,7 @@ export const HeroImage = styled.img`
 `
 
 interface ImageCoverProps {
-  shadow?: boolean
+  $shadow?: boolean
 }
 
 export const ImageCover = styled(motion.div)<ImageCoverProps>`
@@ -37,8 +37,8 @@ export const ImageCover = styled(motion.div)<ImageCoverProps>`
   bottom: 0;
   background-color: ${(props) => props.theme.background};
   transition: box-shadow 0.3s;
-  ${({ shadow }) =>
-    shadow &&
+  ${({ $shadow }) =>
+    $shadow &&
     css`
       box-shadow: 0 0 60px 50px #000;
       /* box-shadow: 0 0 60px #fff; */

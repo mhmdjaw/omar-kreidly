@@ -7,7 +7,7 @@ interface HuntLogoProps extends SVGProps<SVGSVGElement> {
 }
 
 export const PCHuntLogo: React.FC<HuntLogoProps> = ({ variants, motionStyle, ...props }: HuntLogoProps) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" width="893.678" height="176.04" viewBox="0 0 893.678 176.04">
+  <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 893.678 176.04">
     <motion.g custom={0} transform="translate(-0.005 0.05)" style={motionStyle}>
       <motion.path
         custom={0}

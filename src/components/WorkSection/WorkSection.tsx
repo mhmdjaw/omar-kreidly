@@ -22,7 +22,7 @@ const WorkSection: React.FC = () => {
         onMouseOver={() => {
           titleAnimationComplete && setInverted(false)
         }}
-        invert={inverted}
+        $invert={inverted}
         onClick={() => titleAnimationComplete && navigate('/work/photography')}
       >
         <Flex>
@@ -43,7 +43,7 @@ const WorkSection: React.FC = () => {
         onMouseMove={() => {
           titleAnimationComplete && setInverted(true)
         }}
-        invert={inverted}
+        $invert={inverted}
         onClick={() => titleAnimationComplete && navigate('/work/design')}
       >
         <Flex>

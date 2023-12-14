@@ -34,7 +34,7 @@ const ProjectHero: React.FC<ProjectHeroProps> = ({ logo: Logo, shrink, thickStro
         <motion.div variants={variants.block} />
         <motion.div variants={variants.block} />
       </BlocksContainer>
-      <HeroContent column>
+      <HeroContent $column>
         {/* <div /> */}
         <HeroLogo className={shrink ? 'shrink' : undefined}>
           <Logo
@@ -46,7 +46,7 @@ const ProjectHero: React.FC<ProjectHeroProps> = ({ logo: Logo, shrink, thickStro
         {/* <ScrollIndicatorContainer> */}
         {/* {showIndicator && ( */}
         {/* <ScrollIndicator /> */}
-        <ScrollIndicator visible={animationComplete}>
+        <ScrollIndicator $visible={animationComplete}>
           <span></span>
           <span></span>
           <span></span>

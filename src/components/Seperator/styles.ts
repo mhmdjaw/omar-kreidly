@@ -3,12 +3,12 @@ import theme from '@src/theme'
 import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
-export const SeparatorContainer = styled(motion(Flex))`
+export const SeparatorContainer = motion(styled(Flex)`
   margin: 150px 0;
   ${theme.breakpoints.down('sm')} {
     margin: 75px 0;
   }
-`
+`)
 
 export const Line = styled(motion.div)`
   height: 2px;

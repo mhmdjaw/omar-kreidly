@@ -5,6 +5,7 @@ import { useGlobalContext } from '@src/context'
 import { BehanceIcon, InstagramIcon, LinkedinIcon } from '@src/assets/svg'
 import theme from '@src/theme'
 import { Container, Flex } from '@src/styles/global-styles'
+import { isSafari } from '@src/helpers'
 
 const svgIcons = [
   {
@@ -23,14 +24,12 @@ const svgIcons = [
 
 const AboutSection: React.FC = () => {
   // const [buttonText, setButtonText] = useState('Copy Email')
-  const [rotateButton, setRotateButton] = useState(false)
+  const [fillButton, setFillButton] = useState(false)
   const { onCursor } = useGlobalContext()
-
-  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
 
   return (
     <AboutContainer>
-      <AboutContent initial={{ opacity: 0 }} animate={{ opacity: 1 }} column spaceBetween>
+      <AboutContent initial={{ opacity: 0 }} animate={{ opacity: 1 }} $column $spaceBetween>
         <Container>
           <Text>
             I&#8217;m a versatile creative professional skilled in photography and UI/UX design. My work seamlessly
@@ -65,13 +64,13 @@ const AboutSection: React.FC = () => {
         </CoppyContainer> */}
         <CopyButton
           onClick={() => {
-            setRotateButton(!rotateButton)
+            setFillButton(!fillButton)
             navigator.clipboard.writeText('kreidlyomar@gmail.com')
           }}
           onMouseEnter={() => onCursor('hidden')}
           onMouseLeave={() => onCursor('unhovered')}
-          fill={rotateButton}
-          isSafari={isSafari}
+          $fill={fillButton}
+          $isSafari={isSafari}
         >
           <p>Copy Email</p>
           <div>
@@ -80,8 +79,8 @@ const AboutSection: React.FC = () => {
             </div>
           </div>
         </CopyButton>
-        <Container fluid fullWidth>
-          <IconsContainer spaceBetween>
+        <Container $fluid $fullWidth>
+          <IconsContainer $spaceBetween>
             <Developer>
               Coded by{' '}
               <a

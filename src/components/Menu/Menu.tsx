@@ -36,9 +36,9 @@ const Menu: React.FC<MenuProps> = ({ pathname }: MenuProps) => {
 
   return (
     <>
-      <MenuContainer isWorkPage={isWorkPage}>
-        <Container fluid>
-          <Flex flexEnd={hideBackButton} spaceBetween={!hideBackButton} noHeight>
+      <MenuContainer $isWorkPage={isWorkPage}>
+        <Container $fluid>
+          <Flex $flexEnd={hideBackButton} $spaceBetween={!hideBackButton} $noHeight>
             {!hideBackButton && (
               <motion.a
                 onClick={() => navigate(-1)}
@@ -88,7 +88,7 @@ const Menu: React.FC<MenuProps> = ({ pathname }: MenuProps) => {
             animate={{ x: toggleMenu ? 0 : '-100%' }}
             transition={{ ease: ease.expoInOut, duration: 1.6 }}
           >
-            <Flex column>
+            <Flex $column>
               {navItems.map(({ link, text }, i) => (
                 <NavItem
                   key={i}

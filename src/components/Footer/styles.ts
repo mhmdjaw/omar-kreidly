@@ -33,22 +33,52 @@ export const FooterContent = styled(Flex)`
   right: 0;
   bottom: 0;
   justify-content: space-evenly;
+  transition: transform 0.1s;
 `
 
 export const FooterLogo = styled.div`
   display: flex;
   position: relative;
-  fill: ${(props) => props.theme.background};
-  ${theme.breakpoints.up('sm')} {
-    width: 30%;
-    &.shrink {
-      width: 15%;
-    }
+  width: 30%;
+  transition: transform 0.5s;
+  pointer-events: none;
+  &.shrink {
+    width: 15%;
   }
   ${theme.breakpoints.down('md')} {
-    width: 200px;
+    width: 300px;
     &.shrink {
       width: 130px;
     }
+  }
+  ${theme.breakpoints.down('sm')} {
+    width: 200px;
+  }
+  & > .move-up {
+    transform: translateY(-20%);
+  }
+`
+
+export const Button = styled.button`
+  background-color: ${(props) => props.theme.text};
+  border: none;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  position: absolute;
+  width: 33vw;
+  max-width: 90vmin;
+  transform: scale(0);
+  transition: transform 0.5s;
+  &.shrink {
+    width: 25vw;
+  }
+  ${theme.breakpoints.down('md')} {
+    width: 330px;
+    &.shrink {
+      width: 220px;
+    }
+  }
+  ${theme.breakpoints.down('sm')} {
+    width: 220px;
   }
 `

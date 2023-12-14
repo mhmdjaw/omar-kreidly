@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import { ImgContainer, MobileMockups, MockupSection, ProjectContainer } from './styles'
 import { DanosLogo, PCHuntLogo } from '@src/assets/svg'
 import ProjectHero from '../ProjectHero'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { StaticImage } from 'gatsby-plugin-image'
 import { g_variants } from '@src/helpers'
 import { useMediaQuery } from 'react-responsive'
@@ -12,39 +12,12 @@ import Separator from '../Seperator/Separator'
 import variants from './variants'
 import Colors from '../Colors'
 import Footer from '../Footer'
+import useDanosProject from './DanosProject.State'
 
 const imagesPath = '../../assets/images/danos'
 
 const DanosProject: React.FC = () => {
-  // first image
-  const [containerHeight, setContainerHeight] = useState<number | undefined>(undefined)
-  const container = useRef<HTMLDivElement | null>(null)
-  const { scrollYProgress: scrollYProgress1 } = useScroll({
-    target: container,
-    offset: ['start end', 'start start']
-  })
-
-  const y = useTransform(scrollYProgress1, [0, 1], [-((containerHeight || 0) - 0.1 * (containerHeight || 0)), 0])
-
-  // last image
-  const [container2Height, setContainer2Height] = useState<number | undefined>(undefined)
-  const container2 = useRef<HTMLDivElement | null>(null)
-  const { scrollYProgress: scrollYProgress2 } = useScroll({
-    target: container2,
-    offset: ['start start', 'end start']
-  })
-
-  const y2 = useTransform(scrollYProgress2, [-0.1, 1], [0, container2Height || 0])
-
-  useEffect(() => {
-    if (!(container.current && container2.current)) return
-    const resizeObserver = new ResizeObserver(() => {
-      setContainerHeight(container.current?.clientHeight)
-      setContainer2Height(container2.current?.clientHeight)
-    })
-    resizeObserver.observe(container.current)
-    return () => resizeObserver.disconnect() // clean up
-  }, [container])
+  const { container, y, container2, y2 } = useDanosProject()
 
   const isMobile = useMediaQuery({ maxWidth: theme.breakpoints.sm })
 
@@ -85,7 +58,7 @@ const DanosProject: React.FC = () => {
             </motion.div>
           </motion.div>
         </MockupSection>
-        <Container mt mb fullWidth>
+        <Container $mt $mb $fullWidth>
           <SectionTitle {...g_variants.text}>About</SectionTitle>
           <AboutText {...g_variants.text}>
             <strong>Danos</strong> is a revolutionary app that brings the best of two culinary worlds together in one
@@ -115,7 +88,7 @@ const DanosProject: React.FC = () => {
           </Wireframes>
         </Container>
       </ProjectContent>
-      <Footer logo={PCHuntLogo} />
+      <Footer logo={PCHuntLogo} link="/work/design" />
     </ProjectContainer>
   )
 }

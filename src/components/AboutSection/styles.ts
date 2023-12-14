@@ -9,7 +9,7 @@ export const AboutContainer = styled.div`
   overflow: hidden;
 `
 
-export const AboutContent = styled(motion(Flex))`
+export const AboutContent = motion(styled(Flex)`
   position: absolute;
   top: calc(var(--vh, 1vh) * 25);
   left: 0;
@@ -18,7 +18,7 @@ export const AboutContent = styled(motion(Flex))`
   ${theme.breakpoints.down('sm')} {
     top: calc(var(--vh, 1vh) * 15);
   }
-`
+`)
 
 export const Text = styled.h2`
   margin: 0;
@@ -94,8 +94,8 @@ export const CoppyContainer = styled.div<CoppyContainerProps>`
 // `
 
 interface CopyButtonProps {
-  fill?: boolean
-  isSafari?: boolean
+  $fill?: boolean
+  $isSafari?: boolean
 }
 
 export const CopyButton = styled.button<CopyButtonProps>`
@@ -124,8 +124,8 @@ export const CopyButton = styled.button<CopyButtonProps>`
     width: 0;
     overflow: hidden;
     transition: width 0.7s;
-    ${({ fill }) =>
-      fill &&
+    ${({ $fill }) =>
+      $fill &&
       css`
         width: 100%;
       `}
@@ -142,8 +142,8 @@ export const CopyButton = styled.button<CopyButtonProps>`
     margin: 0;
     display: inline-block;
   }
-  ${({ isSafari }) =>
-    !isSafari &&
+  ${({ $isSafari }) =>
+    !$isSafari &&
     css`
       @media (hover: hover) and (pointer: fine) {
         &:hover {

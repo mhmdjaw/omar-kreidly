@@ -30,7 +30,7 @@ export const MockupSection = styled(motion.div)`
   }
 `
 
-export const MobileMockups = styled(motion(Flex))`
+export const MobileMockups = motion(styled(Flex)`
   margin-top: 200px;
   justify-content: space-evenly;
   & > div {
@@ -43,4 +43,4 @@ export const MobileMockups = styled(motion(Flex))`
       width: 30vw;
     }
   }
-`
+`)

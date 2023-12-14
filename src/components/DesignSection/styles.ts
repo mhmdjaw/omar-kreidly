@@ -4,10 +4,11 @@ import { motion } from 'framer-motion'
 import styled, { css } from 'styled-components'
 
 interface DesignContainerProps {
-  addBlur: boolean
+  $addBlur: boolean
+  $column: boolean
 }
 
-export const DesignContainer = styled(motion(Flex))<DesignContainerProps>`
+export const DesignContainer = motion<DesignContainerProps>(styled(Flex)`
   position: relative;
   overflow: hidden;
   height: calc(var(--vh, 1vh) * 100);
@@ -19,24 +20,24 @@ export const DesignContainer = styled(motion(Flex))<DesignContainerProps>`
     justify-content: center;
     overflow: hidden;
     align-items: center;
-    ${({ addBlur }) =>
-      addBlur &&
+    ${({ $addBlur }) =>
+      $addBlur &&
       css`
-        filter: blur(5px);
         transition: all 0.3s;
         @media (hover: hover) and (pointer: fine) {
+          filter: blur(5px);
           &:hover {
             filter: blur(0);
           }
         }
-        @media (hover: none) {
+        /* @media (hover: none) {
           &:active {
             filter: blur(0);
           }
-        }
+        } */
       `}
   }
-`
+`)
 
 export const Block = styled(motion.div)`
   position: absolute;

@@ -24,6 +24,8 @@ export const isTouchDevice = () => {
   return false
 }
 
+export const isSafari = isBrowser && /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
+
 export const g_variants = {
   pathVariants: {
     hidden: {

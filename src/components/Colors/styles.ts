@@ -14,7 +14,7 @@ export const ColorsContainer = styled(motion.div)`
   }
 `
 
-export const Color = styled(motion(Flex))`
+export const Color = motion(styled(Flex)`
   justify-content: center;
   aspect-ratio: 1/1;
   border-radius: 50%;
@@ -37,4 +37,4 @@ export const Color = styled(motion(Flex))`
       margin: 0;
     }
   }
-`
+`)

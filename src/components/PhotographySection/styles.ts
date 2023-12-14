@@ -3,7 +3,7 @@ import theme from '@src/theme'
 import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
-export const PhotographySectionContainer = styled(motion(Flex))`
+export const PhotographySectionContainer = motion(styled(Flex)`
   height: calc(var(--vh, 1vh) * 100);
   position: relative;
   overflow: hidden;
@@ -109,4 +109,4 @@ export const PhotographySectionContainer = styled(motion(Flex))`
       }
     }
   }
-`
+`)

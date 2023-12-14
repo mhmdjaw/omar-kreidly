@@ -33,21 +33,22 @@ export const HeroLogo = styled.div`
   display: flex;
   position: relative;
   fill: ${(props) => props.theme.text};
-  ${theme.breakpoints.up('sm')} {
-    width: 30%;
-    &.shrink {
-      width: 15%;
-    }
+  width: 30%;
+  &.shrink {
+    width: 15%;
   }
   ${theme.breakpoints.down('md')} {
-    width: 200px;
+    width: 300px;
     &.shrink {
       width: 130px;
     }
   }
+  ${theme.breakpoints.down('sm')} {
+    width: 200px;
+  }
 `
 
-export const BlocksContainer = styled(motion(Flex))`
+export const BlocksContainer = motion(styled(Flex)`
   position: relative;
   height: 100vh;
   overflow: hidden;
@@ -60,7 +61,7 @@ export const BlocksContainer = styled(motion(Flex))`
     height: 100vh;
     background-color: ${(props) => props.theme.text};
   }
-`
+`)
 
 // export const Block = styled(motion.div)`
 //   flex-grow: 1;
@@ -86,7 +87,7 @@ const scrollAnimation = keyframes`
 `
 
 interface ScrollIndicatorProps {
-  visible?: boolean
+  $visible?: boolean
 }
 
 export const ScrollIndicator = styled.div<ScrollIndicatorProps>`
@@ -117,8 +118,8 @@ export const ScrollIndicator = styled.div<ScrollIndicatorProps>`
       animation-delay: 0.3s;
     }
   }
-  ${({ visible }) =>
-    visible &&
+  ${({ $visible }) =>
+    $visible &&
     css`
       opacity: 1;
       transition: opacity 1s;

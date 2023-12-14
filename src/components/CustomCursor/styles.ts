@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components'
 
 interface CursorProps {
-  hovered: boolean
-  hidden: boolean
+  $hovered: boolean
+  $hidden: boolean
 }
 
 export const CursorContainer = styled.div`
@@ -25,13 +25,13 @@ export const Cursor = styled.div<CursorProps>`
   transform: translate(-50%, -50%) rotateY(0) scale(1);
   transition: transform 0.4s ease-out;
   pointer-events: none;
-  ${({ hovered }) =>
-    hovered &&
+  ${({ $hovered }) =>
+    $hovered &&
     css`
       transform: translate(-50%, -50%) rotateY(180deg);
     `}
-  ${({ hidden }) =>
-    hidden &&
+  ${({ $hidden }) =>
+    $hidden &&
     css`
       transform: translate(-50%, -50%) scale(0.01);
       transition:

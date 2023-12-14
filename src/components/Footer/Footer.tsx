@@ -1,31 +1,39 @@
-import { MotionStyle, Variants, useScroll, useSpring, useTransform } from 'framer-motion'
-import React, { SVGProps, useRef } from 'react'
-import { Block, FooterContainer, FooterContent, FooterLogo } from './styles'
-import { isTouchDevice } from '@src/helpers'
+import { MotionStyle, Variants } from 'framer-motion'
+import React, { SVGProps } from 'react'
+import { Block, Button, FooterContainer, FooterContent, FooterLogo } from './styles'
+import { navigate } from 'gatsby'
+import useFooter from './Footer.State'
 
 interface FooterProps {
   logo: React.FC<SVGProps<SVGSVGElement> & { variants?: Variants; motionStyle?: MotionStyle }>
+  link: string
   shrink?: boolean
+  moveUp?: boolean
 }
 
-const Footer: React.FC<FooterProps> = ({ logo: Logo, shrink }: FooterProps) => {
-  const container = useRef<HTMLDivElement | null>(null)
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ['center end', 'end end']
-  })
-
-  const smoothProgress = useSpring(scrollYProgress, { mass: 0.1 })
-
-  const height = useTransform(isTouchDevice() ? scrollYProgress : smoothProgress, [0, 0.9], ['0%', '100%'])
+const Footer: React.FC<FooterProps> = ({ logo: Logo, shrink, moveUp, link }: FooterProps) => {
+  const { container, height, contentRef, buttonRef, logoRef, mouseMove, mouseLeave, mouseDown, mouseUp, onCursor } =
+    useFooter()
 
   return (
     <FooterContainer ref={container}>
       <Block initial={{ height: 0 }} style={{ height }} />
       <Block initial={{ height: 0 }} style={{ height }} />
-      <FooterContent column>
-        <FooterLogo className={shrink ? 'shrink' : undefined}>
-          <Logo width="100%" />
+      <FooterContent ref={contentRef} $column>
+        <Button
+          ref={buttonRef}
+          className={shrink ? 'shrink' : undefined}
+          onMouseMove={mouseMove}
+          onMouseLeave={mouseLeave}
+          onMouseDown={mouseDown}
+          onMouseUp={mouseUp}
+          onPointerDown={mouseDown}
+          onPointerUp={mouseUp}
+          onMouseOver={() => onCursor('hovered')}
+          onClick={() => navigate(link)}
+        />
+        <FooterLogo ref={logoRef} className={shrink ? 'shrink' : undefined}>
+          <Logo className={moveUp ? 'move-up' : undefined} width="100%" />
         </FooterLogo>
       </FooterContent>
     </FooterContainer>

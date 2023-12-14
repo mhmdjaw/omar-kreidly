@@ -18,7 +18,7 @@ const PortraitImages: React.FC = () => {
   const animationControls = useAnimationControls()
   const [imagesLoading, setImagesLoading] = useState(5)
   const { menuAnimationComplete } = useMenuAnimation()
-  const [loop, setLoop] = useState<NodeJS.Timer | undefined>(undefined)
+  const [loop, setLoop] = useState<NodeJS.Timeout | undefined>(undefined)
   const [slideIndex, setSlideIndex] = useState(0)
 
   if (imagesLoading === 0) {

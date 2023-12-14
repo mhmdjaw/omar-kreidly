@@ -30,7 +30,7 @@ export const Logo = styled(Link)`
 `
 
 interface NavItemProps extends Omit<GatsbyLinkProps<Record<string, unknown>>, 'ref'> {
-  linkActive: boolean
+  $linkActive: boolean
 }
 
 export const NavItem = styled(Link)<NavItemProps>`
@@ -55,8 +55,8 @@ export const NavItem = styled(Link)<NavItemProps>`
     }
   }
 
-  ${({ linkActive }) =>
-    linkActive &&
+  ${({ $linkActive }) =>
+    $linkActive &&
     css`
       &::before {
         width: 100%;

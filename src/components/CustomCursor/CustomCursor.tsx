@@ -43,7 +43,7 @@ const CustomCursor: React.FC = () => {
 
   return (
     <CursorContainer ref={cursorRef}>
-      <Cursor hovered={cursorType === 'hovered'} hidden={cursorType === 'hidden'}>
+      <Cursor $hovered={cursorType === 'hovered'} $hidden={cursorType === 'hidden'}>
         <SecondaryLogo />
       </Cursor>
     </CursorContainer>

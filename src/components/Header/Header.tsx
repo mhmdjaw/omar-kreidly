@@ -36,8 +36,8 @@ const Header: React.FC<HeaderProps> = ({ onAnimationComplete, pathname, delay }:
       animate={headerControls}
       transition={{ duration: 1, ease: ease.slideIn, delay: delay ? 2.2 : 0 }}
     >
-      <Container fluid>
-        <Flex spaceBetween noHeight>
+      <Container $fluid>
+        <Flex $spaceBetween $noHeight>
           <Logo to="/" onMouseEnter={() => onCursor('hovered')} onMouseLeave={() => onCursor('unhovered')}>
             <PrimaryLogo />
           </Logo>
@@ -48,7 +48,7 @@ const Header: React.FC<HeaderProps> = ({ onAnimationComplete, pathname, delay }:
                 to={link}
                 onMouseEnter={() => onCursor('hovered')}
                 onMouseLeave={() => onCursor('unhovered')}
-                linkActive={pathname === link}
+                $linkActive={pathname === link}
               >
                 {text}
               </NavItem>

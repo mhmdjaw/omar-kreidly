@@ -20,7 +20,7 @@ const DesignSection: React.FC = () => {
   }
 
   return (
-    <DesignContainer initial="hidden" animate="visible" column={isMobile} addBlur={svgAnimationComplete}>
+    <DesignContainer initial="hidden" animate="visible" $column={isMobile} $addBlur={svgAnimationComplete}>
       <Flex onClick={() => svgAnimationComplete && navigate('/work/design/danos')}>
         <Block className="first" variants={variants.block} onAnimationComplete={startSVGAnimation} />
         <LogoContainer initial="hidden" animate={svgControls}>
