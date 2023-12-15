@@ -1,12 +1,17 @@
 import React from 'react'
-import { SEO } from '../components'
+import { PageProps } from 'gatsby'
+import { Layout, NotFound, SEO } from '@src/components'
 
-const NotFoundPage: React.FC = () => (
-  <>
-    <SEO title="Not found" />
-    <h1>OOPS!</h1>
-    <p>Looks like the page you&apos;re looking for doesn&apos;t exist... the sadness 😭</p>
-  </>
-)
+export const Head = () => {
+  return <SEO title="Not Found" />
+}
+
+const NotFoundPage: React.FC<PageProps> = () => {
+  return (
+    <Layout pathname="/not-found">
+      <NotFound />
+    </Layout>
+  )
+}
 
 export default NotFoundPage

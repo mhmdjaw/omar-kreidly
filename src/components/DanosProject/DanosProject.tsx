@@ -88,7 +88,7 @@ const DanosProject: React.FC = () => {
           </Wireframes>
         </Container>
       </ProjectContent>
-      <Footer logo={PCHuntLogo} link="/work/design" />
+      <Footer logo={PCHuntLogo} link="/work/design/pchunt" />
     </ProjectContainer>
   )
 }

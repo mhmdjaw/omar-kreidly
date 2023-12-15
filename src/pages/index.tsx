@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { PageProps } from 'gatsby'
 import { Header, Hero, PageTransition, SEO } from '@src/components'
+import { useGlobalContext } from '@src/context'
 
 export const Head = () => {
   return <SEO title="Designer & Photographer" />
@@ -8,6 +9,8 @@ export const Head = () => {
 
 const Home: React.FC<PageProps> = ({ location }: PageProps) => {
   const [headerAnimationComplete, setHeaderAnimationComplete] = useState(false)
+  const { onCursor } = useGlobalContext()
+  useEffect(() => onCursor('unhovered'), [])
   return (
     <>
       <header>

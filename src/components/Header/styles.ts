@@ -29,7 +29,7 @@ export const Logo = styled(Link)`
   }
 `
 
-interface NavItemProps extends Omit<GatsbyLinkProps<Record<string, unknown>>, 'ref'> {
+interface NavItemProps extends Omit<GatsbyLinkProps<object>, 'ref'> {
   $linkActive: boolean
 }
 

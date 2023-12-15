@@ -25,14 +25,12 @@ const WrapPage: React.FC<WrapPageProps> = ({ children }: WrapPageProps) => {
   return (
     <>
       <GlobalStyle />
-      {/* {animationComplete &&  */}
-      <CustomCursor />
-      {/* }
-      {animationComplete ? ( */}
-      <AnimatePresence mode="wait">{children}</AnimatePresence>
-      {/* ) : (
+      {animationComplete && <CustomCursor />}
+      {animationComplete ? (
+        <AnimatePresence mode="wait">{children}</AnimatePresence>
+      ) : (
         <LoadingScreen setAnimationComplete={setAnimationComplete} />
-      )} */}
+      )}
     </>
   )
 }

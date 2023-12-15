@@ -4,6 +4,7 @@ import PageTransition from '../PageTransition'
 import Menu from '../Menu'
 import { isTouchDevice } from '@src/helpers'
 import Lenis from '@studio-freight/lenis'
+import { useGlobalContext } from '@src/context'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -15,6 +16,7 @@ const HeaderPath = ['/about', '/not-found', '/work/design/danos']
 const Layout: React.FC<LayoutProps> = ({ children, pathname }: LayoutProps) => {
   const isHeader = HeaderPath.includes(pathname)
 
+  const { onCursor } = useGlobalContext()
   const delay = isHeader && pathname.includes('/work/design')
 
   useEffect(() => {
@@ -32,6 +34,12 @@ const Layout: React.FC<LayoutProps> = ({ children, pathname }: LayoutProps) => {
       }
     }
   }, [])
+
+  useEffect(
+    () => onCursor('unhovered'),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [pathname]
+  )
 
   return (
     <>
