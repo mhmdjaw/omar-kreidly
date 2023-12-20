@@ -112,6 +112,9 @@ export const CopyButton = styled.button<CopyButtonProps>`
   font-size: 1rem;
   overflow: hidden;
   transition: all 0.4s ease-out;
+  ${theme.breakpoints.down('sm')} {
+    zoom: 0.8;
+  }
   & > div {
     position: absolute;
     display: flex;
