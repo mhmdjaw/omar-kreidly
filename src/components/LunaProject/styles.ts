@@ -11,6 +11,7 @@ export const ImgContainer = styled(motion.div)`
   display: flex;
   position: relative;
   overflow: hidden;
+  z-index: 0;
 `
 
 export const MockupSection = styled(motion.div)`
@@ -18,12 +19,12 @@ export const MockupSection = styled(motion.div)`
   flex-direction: column;
   overflow: hidden;
   padding-bottom: 200px;
-  ${theme.breakpoints.down('sm')} {
-    padding-bottom: 100px;
-  }
   position: relative;
   z-index: 39;
   background-color: ${(props) => props.theme.background};
+  ${theme.breakpoints.down('sm')} {
+    padding-bottom: 100px;
+  }
 `
 
 export const MobileMockups = motion(styled(Flex)`

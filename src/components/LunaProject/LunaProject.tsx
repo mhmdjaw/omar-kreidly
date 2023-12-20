@@ -19,6 +19,7 @@ const LunaProject: React.FC = () => {
   const { container, y, container2, y2 } = useLunaProject()
 
   const isMobile = useMediaQuery({ maxWidth: theme.breakpoints.sm })
+  const isLaptop = useMediaQuery({ minWidth: theme.breakpoints.md })
 
   const i = isMobile ? 1 : 2
 
@@ -47,7 +48,7 @@ const LunaProject: React.FC = () => {
             </motion.div>
           </MobileMockups>
         </MockupSection>
-        <ImgContainer ref={container2} style={{ y: y2 }}>
+        <ImgContainer ref={container2} style={{ y: isLaptop ? y2 : undefined }}>
           <StaticImage src={`${imagesPath}/luna6.jpg`} alt="luna_6" />
         </ImgContainer>
         <Sections>
