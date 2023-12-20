@@ -13,7 +13,7 @@ interface LayoutProps {
 
 const designPath = '/work/design'
 
-const HeaderPath = ['/about', '/not-found', `${designPath}/danos`, `${designPath}/pchunt`]
+const HeaderPath = ['/about', '/not-found', `${designPath}/danos`, `${designPath}/pchunt`, `${designPath}/luna`]
 
 const Layout: React.FC<LayoutProps> = ({ children, pathname }: LayoutProps) => {
   const isHeader = HeaderPath.includes(pathname)

@@ -27,7 +27,7 @@ const DesignSection: React.FC = () => {
           <DanosLogo width="100%" variants={g_variants.pathVariants} motionStyle={{ stroke: theme.text }} />
         </LogoContainer>
       </Flex>
-      <Flex>
+      <Flex onClick={() => svgAnimationComplete && navigate('/work/design/luna')}>
         <LogoContainer className="luna" initial="hidden" animate={svgControls}>
           <LunaLogo width="100%" variants={g_variants.pathVariants} motionStyle={{ stroke: theme.text }} />
         </LogoContainer>

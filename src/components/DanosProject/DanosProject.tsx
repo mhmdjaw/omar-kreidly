@@ -31,19 +31,19 @@ const DanosProject: React.FC = () => {
           <StaticImage src={`${imagesPath}/danos1.png`} alt="danos_1" />
         </ImgContainer>
         <MockupSection>
-          <MobileMockups {...variants.mobileMockups}>
-            <motion.div custom={i} variants={variants.mobile}>
+          <MobileMockups {...g_variants.mobileMockups}>
+            <motion.div custom={i} variants={g_variants.mobile}>
               <StaticImage class="img" src={`${imagesPath}/danos2.png`} alt="danos_2" />
             </motion.div>
-            <motion.div custom={i} variants={variants.mobile}>
+            <motion.div custom={i} variants={g_variants.mobile}>
               <StaticImage class="img" src={`${imagesPath}/danos3.png`} alt="danos_3" />
             </motion.div>
           </MobileMockups>
-          <MobileMockups {...variants.mobileMockups}>
-            <motion.div custom={i} variants={variants.mobile}>
+          <MobileMockups {...g_variants.mobileMockups}>
+            <motion.div custom={i} variants={g_variants.mobile}>
               <StaticImage class="img" src={`${imagesPath}/danos4.png`} alt="danos_4" />
             </motion.div>
-            <motion.div custom={i} variants={variants.mobile}>
+            <motion.div custom={i} variants={g_variants.mobile}>
               <StaticImage class="img" src={`${imagesPath}/danos5.png`} alt="danos_5" />
             </motion.div>
           </MobileMockups>
@@ -70,19 +70,19 @@ const DanosProject: React.FC = () => {
           <Colors colors={['2998FF', 'FFFFFF', 'FF8A00', '343434', '8D8D8D']} />
           <Separator />
           <SectionTitle {...g_variants.text}>Wireframes</SectionTitle>
-          <Wireframes className="first" {...variants.mobileMockups}>
-            <motion.div custom={i} variants={variants.mobile}>
+          <Wireframes className="first" {...g_variants.mobileMockups}>
+            <motion.div custom={i} variants={g_variants.mobile}>
               <StaticImage class="img" src={`${imagesPath}/danos7.png`} alt="danos_7" />
             </motion.div>
-            <motion.div custom={i} variants={variants.mobile}>
+            <motion.div custom={i} variants={g_variants.mobile}>
               <StaticImage class="img" src={`${imagesPath}/danos8.png`} alt="danos_8" />
             </motion.div>
           </Wireframes>
-          <Wireframes {...variants.mobileMockups}>
-            <motion.div custom={i} variants={variants.mobile}>
+          <Wireframes {...g_variants.mobileMockups}>
+            <motion.div custom={i} variants={g_variants.mobile}>
               <StaticImage class="img" src={`${imagesPath}/danos9.png`} alt="danos_9" />
             </motion.div>
-            <motion.div custom={i} variants={variants.mobile}>
+            <motion.div custom={i} variants={g_variants.mobile}>
               <StaticImage class="img" src={`${imagesPath}/danos10.png`} alt="danos_10" />
             </motion.div>
           </Wireframes>
