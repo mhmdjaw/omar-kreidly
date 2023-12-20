@@ -10,15 +10,15 @@ import { isSafari } from '@src/helpers'
 const svgIcons = [
   {
     Icon: InstagramIcon,
-    link: '#'
+    link: 'https://www.instagram.com/omarkreidly/?hl=en'
   },
   {
     Icon: LinkedinIcon,
-    link: '#'
+    link: 'https://www.linkedin.com/in/omarkreidly/'
   },
   {
     Icon: BehanceIcon,
-    link: '#'
+    link: 'https://www.behance.net/kreidlyoma74c7'
   }
 ]
 
@@ -100,6 +100,8 @@ const AboutSection: React.FC = () => {
                   key={i}
                   onMouseEnter={() => onCursor('hovered')}
                   onMouseLeave={() => onCursor('unhovered')}
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   <Icon height="100%" fill={theme.text} />
                 </a>
