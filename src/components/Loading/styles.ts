@@ -14,6 +14,15 @@ export const LoadingContainer = styled(Flex)`
   justify-content: center;
 `
 
+export const LoadingContainerSmall = styled(Flex)`
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: ${(props) => props.theme.background};
+  overflow: hidden;
+  justify-content: center;
+`
+
 const logo1 = keyframes`
   0% {
     transform: scale(0) translateY(-50%);

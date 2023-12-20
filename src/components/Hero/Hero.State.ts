@@ -15,7 +15,7 @@ const useHero = (headerAnimationComplete: boolean) => {
 
   useEffect(
     () => {
-      let interval: NodeJS.Timer
+      let interval: NodeJS.Timeout
       if (headerAnimationComplete) {
         sequence()
         interval = setInterval(() => {

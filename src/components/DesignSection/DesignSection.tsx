@@ -32,7 +32,7 @@ const DesignSection: React.FC = () => {
           <LunaLogo width="100%" variants={g_variants.pathVariants} motionStyle={{ stroke: theme.text }} />
         </LogoContainer>
       </Flex>
-      <Flex>
+      <Flex onClick={() => svgAnimationComplete && navigate('/work/design/pchunt')}>
         <Block
           className="last"
           variants={variants.block}

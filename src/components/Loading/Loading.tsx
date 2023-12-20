@@ -1,24 +1,38 @@
 import React from 'react'
-import { InnerContainer, LoadingContainer } from './styles'
+import { InnerContainer, LoadingContainer, LoadingContainerSmall } from './styles'
 import { SecondaryLogo } from '@src/assets/svg'
 
-const Loading: React.FC = () => {
+const LoadingSign: React.FC = () => {
   return (
+    <InnerContainer>
+      <div>
+        <SecondaryLogo />
+      </div>
+      <div>
+        <SecondaryLogo />
+      </div>
+      <div>
+        <SecondaryLogo />
+      </div>
+      <div>
+        <SecondaryLogo />
+      </div>
+    </InnerContainer>
+  )
+}
+
+interface LoadingProps {
+  contained?: boolean
+}
+
+const Loading: React.FC<LoadingProps> = ({ contained }: LoadingProps) => {
+  return contained ? (
+    <LoadingContainerSmall>
+      <LoadingSign />
+    </LoadingContainerSmall>
+  ) : (
     <LoadingContainer>
-      <InnerContainer>
-        <div>
-          <SecondaryLogo />
-        </div>
-        <div>
-          <SecondaryLogo />
-        </div>
-        <div>
-          <SecondaryLogo />
-        </div>
-        <div>
-          <SecondaryLogo />
-        </div>
-      </InnerContainer>
+      <LoadingSign />
     </LoadingContainer>
   )
 }

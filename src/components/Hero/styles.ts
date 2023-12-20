@@ -29,7 +29,6 @@ interface ImageCoverProps {
 }
 
 export const ImageCover = styled(motion.div)<ImageCoverProps>`
-  /* mix-blend-mode: difference; */
   position: absolute;
   height: calc(var(--vh, 1vh) * 85);
   left: 0;

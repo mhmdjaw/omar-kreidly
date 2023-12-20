@@ -10,7 +10,11 @@ export const Head = () => {
 const Home: React.FC<PageProps> = ({ location }: PageProps) => {
   const [headerAnimationComplete, setHeaderAnimationComplete] = useState(false)
   const { onCursor } = useGlobalContext()
-  useEffect(() => onCursor('unhovered'), [])
+  useEffect(
+    () => onCursor('unhovered'),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  )
   return (
     <>
       <header>

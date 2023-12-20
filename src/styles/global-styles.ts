@@ -70,6 +70,8 @@ interface FlexProps {
   $flexEnd?: boolean
   $column?: boolean
   $noHeight?: boolean
+  $flexGrow?: boolean
+  $stretch?: boolean
 }
 
 export const Flex = styled.div<FlexProps>`
@@ -105,6 +107,18 @@ export const Flex = styled.div<FlexProps>`
     $noHeight &&
     css`
       height: 0;
+    `}
+
+  ${({ $flexGrow }) =>
+    $flexGrow &&
+    css`
+      flex-grow: 1;
+    `}
+
+  ${({ $stretch }) =>
+    $stretch &&
+    css`
+      align-items: stretch;
     `}
 `
 

@@ -6,6 +6,8 @@ const GlobalStyle = createGlobalStyle`
   * {
     text-decoration: none;
     cursor: none;
+    user-select: none;
+    -webkit-user-select: none;
   }
 
   html {

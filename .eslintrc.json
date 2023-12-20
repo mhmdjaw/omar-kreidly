@@ -29,6 +29,7 @@
         "printWidth": 120,
         "endOfLine": "auto"
       }
-    ]
+    ],
+    "react/no-unknown-property": ["off", { "ignore": ["args"] }]
   }
 }

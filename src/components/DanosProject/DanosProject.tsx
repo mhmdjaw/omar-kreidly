@@ -8,11 +8,11 @@ import { g_variants } from '@src/helpers'
 import { useMediaQuery } from 'react-responsive'
 import theme from '@src/theme'
 import { AboutText, Container, ProjectContent, SectionTitle, Wireframes } from '@src/styles/global-styles'
-import Separator from '../Seperator/Separator'
 import variants from './variants'
 import Colors from '../Colors'
 import Footer from '../Footer'
 import useDanosProject from './DanosProject.State'
+import Separator from '../Separator'
 
 const imagesPath = '../../assets/images/danos'
 
@@ -24,7 +24,7 @@ const DanosProject: React.FC = () => {
   const i = isMobile ? 1 : 2
 
   return (
-    <ProjectContainer id="fixed-target">
+    <ProjectContainer>
       <ProjectHero logo={DanosLogo} />
       <ProjectContent style={{ y }}>
         <ImgContainer ref={container}>
