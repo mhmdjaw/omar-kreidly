@@ -1,4 +1,4 @@
-export type CursorType = 'unhovered' | 'hovered' | 'hidden'
+export type CursorType = 'unhovered' | 'hovered' | 'hidden' | 'text'
 
 export interface State {
   cursorType: CursorType

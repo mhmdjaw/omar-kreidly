@@ -29,7 +29,7 @@ const Footer: React.FC<FooterProps> = ({ logo: Logo, shrink, moveUp, link }: Foo
           onMouseUp={mouseUp}
           onPointerDown={mouseDown}
           onPointerUp={mouseUp}
-          onMouseOver={() => onCursor('hovered')}
+          onMouseOver={() => onCursor('text')}
           onClick={() => navigate(link)}
         />
         <FooterLogo ref={logoRef} className={shrink ? 'shrink' : undefined}>

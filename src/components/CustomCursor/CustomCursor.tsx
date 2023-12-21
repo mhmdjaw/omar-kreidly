@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { Cursor, CursorContainer } from './styles'
+import { Cursor, CursorContainer, TextCursor } from './styles'
 import { isBrowser } from '@src/helpers'
 import { SecondaryLogo } from '@src/assets/svg'
 import { useGlobalContext } from '@src/context'
@@ -43,9 +43,10 @@ const CustomCursor: React.FC = () => {
 
   return (
     <CursorContainer ref={cursorRef}>
-      <Cursor $hovered={cursorType === 'hovered'} $hidden={cursorType === 'hidden'}>
+      <Cursor $hovered={cursorType === 'hovered'} $hidden={cursorType === 'hidden' || cursorType === 'text'}>
         <SecondaryLogo />
       </Cursor>
+      <TextCursor $visible={cursorType === 'text'}>visit</TextCursor>
     </CursorContainer>
   )
 }
