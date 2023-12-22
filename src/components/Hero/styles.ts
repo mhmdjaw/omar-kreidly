@@ -71,7 +71,7 @@ export const Title = styled.h1`
     font-size: 2.3rem;
   }
   ${theme.breakpoints.down('sm')} {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
   & > div {
     display: block;
