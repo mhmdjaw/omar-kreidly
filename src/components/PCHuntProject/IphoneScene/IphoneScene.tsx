@@ -17,9 +17,7 @@ const IphoneScene = () => {
   const { ref, inView } = useInView()
 
   useEffect(
-    () => {
-      return () => worker.terminate()
-    },
+    () => () => worker.terminate(),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   )

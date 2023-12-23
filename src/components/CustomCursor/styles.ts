@@ -1,11 +1,6 @@
 import { Flex } from '@src/styles/global-styles'
 import styled, { css } from 'styled-components'
 
-interface CursorProps {
-  $hovered: boolean
-  $hidden: boolean
-}
-
 export const CursorContainer = styled.div`
   display: none;
   position: fixed;
@@ -17,6 +12,11 @@ export const CursorContainer = styled.div`
   z-index: 999;
   transition: transform 0.06s ease-out;
 `
+
+interface CursorProps {
+  $hovered: boolean
+  $hidden: boolean
+}
 
 export const Cursor = styled.div<CursorProps>`
   display: flex;

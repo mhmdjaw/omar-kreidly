@@ -29,6 +29,7 @@ const SEO: React.FC<SeoProps> = ({
         siteMetadata {
           title
           description
+          siteUrl
           author
         }
       }
@@ -52,13 +53,18 @@ const SEO: React.FC<SeoProps> = ({
 
       <meta name="description" content={metaDescription} />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content={title} />
+      <meta property="og:title" content={`${site.siteMetadata.title} | ${title}`} />
       <meta property="og:description" content={metaDescription} />
+      <meta property="og:url" content={site.siteMetadata.siteUrl} />
+      <meta property="og:site_name" content={site.siteMetadata.title} />
+      <meta property="og:locale" content="en" />
 
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={site.siteMetadata.author} />
-      <meta name="twitter:title" content={title} />
+      <meta name="twitter:title" content={`${site.siteMetadata.title} | ${title}`} />
       <meta name="twitter:description" content={metaDescription} />
+
+      <meta name="google" content="notranslate" />
 
       {children}
     </>
