@@ -12,8 +12,6 @@ export const HeroContainer = styled.div`
 export const HeroImage = styled.img`
   position: absolute;
   height: calc(var(--vh, 1vh) * 85);
-  width: auto;
-  max-width: 100%;
   bottom: 0;
   left: 0;
   right: 0;
