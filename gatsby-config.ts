@@ -4,7 +4,7 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: `Omar Kreidly`,
     siteUrl: `https://omarkreidly.me/`,
-    description: 'The portfolio of Omar Kreidly',
+    description: 'The portfolio of Omar Kreidly - designer and photographer.',
     author: 'Mohamad Jawhar'
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
