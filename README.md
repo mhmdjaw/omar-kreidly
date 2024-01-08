@@ -1,21 +1,19 @@
-<a  href="https://omarkreidly.me/">
-	<img  alt="Omar Kreidly"  src="/src/assets/images/favicon.svg"  width="300" />
-</a>
+<p align="center">
+  <a  href="https://omarkreidly.me/">
+	  <img  alt="Omar Kreidly"  src="/src/assets/images/favicon.svg"  width="300" />
+  </a>
+</p>
+
+<br />
  
 # Omar Kreidly's Portfolio Website
 
 Welcome to the code repository for Omar Kreidly's personal portfolio website! Feel free to explore and learn about the tools used to build it.
 
-## Table of Contents
-
-- [Tech Stack](#tech-stack)
-- [Installation](#installation)
-- [License](#license)
-
 ## Tech Stack
 
 - [Gatsby.js](https://www.gatsbyjs.com/) (React based framework)
-- Typescript (language)
+- [Typescript](https://www.typescriptlang.org/) (language)
 - [Styled-Components](https://styled-components.com/) (styling solution)
 - [Framer Motion](https://www.framer.com/motion/) (animation library)
 - [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction) (React renderer for three.js)
