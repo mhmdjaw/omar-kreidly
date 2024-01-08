@@ -1,49 +1,59 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby Minimal TypeScript Starter
-</h1>
+<a  href="https://omarkreidly.me/">
+	<img  alt="Omar Kreidly"  src="/src/assets/images/favicon.svg"  width="300" />
+</a>
+ 
+# Omar Kreidly's Portfolio Website
 
-## 🚀 Quick start
+Welcome to the code repository for Omar Kreidly's personal portfolio website! Feel free to explore and learn about the tools used to build it.
 
-1.  **Create a Gatsby site.**
+## Table of Contents
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [License](#license)
 
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby -- -ts
-    ```
+## Tech Stack
 
-2.  **Start developing.**
+- [Gatsby.js](https://www.gatsbyjs.com/) (React based framework)
+- Typescript (language)
+- [Styled-Components](https://styled-components.com/) (styling solution)
+- [Framer Motion](https://www.framer.com/motion/) (animation library)
+- [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction) (React renderer for three.js)
+- [Netlify](https://www.netlify.com/) (deployment and launch)
 
-    Navigate into your new site’s directory and start it up.
+## Installation
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+1. **Clone the repository:**
 
-3.  **Open the code and start customizing!**
+```bash
+git clone git@github.com:mhmdjaw/omar-kreidly.git
+```
 
-    Your site is now running at http://localhost:8000!
+2. **Navigate to the project directory:**
 
-    Edit `src/pages/index.tsx` to see your site update in real-time!
+```bash
+cd omar-kreidly
+```
 
-4.  **Learn more**
+3. **Install dependencies:**
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+```bash
+npm install
+```
 
-## 🚀 Quick start (Netlify)
+3. **Start the development server:**
 
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
+```bash
+npm run develop
+```
 
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+The project should now be running locally on `localhost:8000`.
+
+## License
+
+Copyright (c) 2023-present Omar Kreidly. All rights reserved.
+
+**The design and articles in this repository are intellectual property of
+the individual mentioned above (unless otherwise stated) and as such CANNOT be
+copied, modified, sublicensed or redistributed without permission from the
+author.**
